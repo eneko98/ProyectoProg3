@@ -5,13 +5,13 @@ import javax.swing.JFrame;
 import javax.swing.*;
 
 
-public class Ventana extends JFrame {
+public class VentanaPrincipal extends JFrame {
 
 	String titulo = "Ventana Principal";
 	Dimension dimension = new Dimension(900, 900);
 	
 	
-	public Ventana(){
+	public VentanaPrincipal(){
 		setTitle(titulo);
 		setResizable(false);
 		setSize(dimension.width, dimension.height);
@@ -32,7 +32,7 @@ public class Ventana extends JFrame {
 	
 	
 	public static void main(String[] args) {
-		Ventana v = new Ventana();
+		VentanaPrincipal v = new VentanaPrincipal();
 		v.setVisible(true);
 	}
 }
