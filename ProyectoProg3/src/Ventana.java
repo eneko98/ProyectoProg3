@@ -1,8 +1,10 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.JFrame;
 import javax.swing.*;
+
+
 
 
 public class Ventana extends JFrame {
@@ -17,18 +19,26 @@ public class Ventana extends JFrame {
 		setSize(dimension.width, dimension.height);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		
-		
-		JButton boton1 = new JButton("Reproductor de musica");
-		boton1.setBounds(150, 100, 120, 60);
+		getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JPanel panelPrincipal = new JPanel();
-		panelPrincipal.setVisible(true);
-		panelPrincipal.add(boton1);
+		getContentPane().add(panelPrincipal, BorderLayout.CENTER);
+		panelPrincipal.setLayout(new BorderLayout(0,0));
+		
+		JPanel panelSuperior = new JPanel();
+		panelPrincipal.add(panelSuperior, BorderLayout.NORTH);
+		
+		JComboBox<String> tipoUsuario = new JComboBox<>();
+		tipoUsuario.addItem("Usuario");
+		tipoUsuario.addItem("Administrador");
+		
+		panelSuperior.add(tipoUsuario);
 		
 		getContentPane().add(panelPrincipal);
 	}
-	
+		
+		
+		
 	
 	
 	public static void main(String[] args) {
