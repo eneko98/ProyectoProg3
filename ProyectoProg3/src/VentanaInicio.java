@@ -16,14 +16,14 @@ import java.awt.Label;
 
 
 
-public class Ventana extends JFrame {
+public class VentanaInicio extends JFrame {
 
 	String titulo = "Ventana Principal";
 	Dimension dimension = new Dimension(900, 900);
 
 	
 	
-	public Ventana(){
+	public VentanaInicio(){
 		setTitle(titulo);
 		setResizable(false);
 		setSize(dimension.width, dimension.height);
@@ -104,11 +104,21 @@ public class Ventana extends JFrame {
 			}
 		});
 		
+		botonEntrar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				VentanaLoggin vl = new VentanaLoggin();
+				vl.setVisible(true);
+				
+			}
+		});
+		
 	}
 		
 		
 	public static void main(String[] args) {
-		Ventana v = new Ventana();
+		VentanaInicio v = new VentanaInicio();
 		v.setVisible(true);
 	}
 }

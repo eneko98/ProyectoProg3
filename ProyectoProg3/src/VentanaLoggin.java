@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class VentanaLoggin {
+public class VentanaLoggin extends JFrame{
 
 	private JFrame frame;
 	private JTextField textField;

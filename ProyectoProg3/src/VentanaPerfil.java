@@ -6,7 +6,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class VentanaPerfil {
+public class VentanaPerfil extends JFrame {
 
 	private JFrame frame;
 
@@ -49,7 +49,7 @@ public class VentanaPerfil {
 		
 		JLabel lblNombre = new JLabel("Nombre :");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNombre.setBounds(265, 13, 56, 16);
+		lblNombre.setBounds(255, 13, 72, 26);
 		frame.getContentPane().add(lblNombre);
 	}
 

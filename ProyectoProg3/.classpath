@@ -3,6 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/eneko/Desktop/vlcj-3.10.1/vlcj-3.10.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/Programación/Programacion 3/Programa Vlcj/vlcj-3.10.1/vlcj-3.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
