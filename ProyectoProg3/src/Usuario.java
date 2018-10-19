@@ -30,18 +30,5 @@ public class Usuario {
 		return "Usuario [nombre=" + nombre + ", contrasenya=" + contrasenya + "]";
 	}
 	
-	public void subirCancion() {
-		
-	}
-	
-	public void bajarCancion() {
-		
-	}
-	
-	public void borrarCancion() {
-		
-	}
-	
-	
 
 }
