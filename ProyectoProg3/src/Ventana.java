@@ -5,8 +5,10 @@ import java.awt.GridLayout;
 
 import javax.swing.*;
 import java.awt.FlowLayout;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
+import java.awt.Font;
+import java.awt.Panel;
+import java.awt.Label;
 
 
 
@@ -15,11 +17,12 @@ public class Ventana extends JFrame {
 
 	String titulo = "Ventana Principal";
 	Dimension dimension = new Dimension(900, 900);
+	private JTextField TfBuscador;
 	
 	
 	public Ventana(){
 		setTitle(titulo);
-		setResizable(true);
+		setResizable(false);
 		setSize(dimension.width, dimension.height);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
@@ -29,30 +32,62 @@ public class Ventana extends JFrame {
 		getContentPane().add(panelPrincipal, BorderLayout.CENTER);
 		
 		getContentPane().add(panelPrincipal);
-		panelPrincipal.setLayout(new BorderLayout(0, 0));
+		panelPrincipal.setLayout(null);
 		
 		JPanel PanelSuperior = new JPanel();
-		panelPrincipal.add(PanelSuperior, BorderLayout.NORTH);
+		PanelSuperior.setBounds(0, 0, 894, 39);
+		panelPrincipal.add(PanelSuperior);
 		PanelSuperior.setLayout(new BorderLayout(0, 0));
 		
 		JPanel PanelEntrar = new JPanel();
+		PanelEntrar.setBackground(new Color(72, 61, 139));
+		PanelEntrar.setForeground(Color.BLACK);
 		PanelEntrar.setBorder(new LineBorder(new Color(0, 0, 0)));
 		PanelSuperior.add(PanelEntrar);
 		PanelEntrar.setLayout(new FlowLayout(FlowLayout.CENTER, 40, 5));
 		
 		JButton botonEntrar = new JButton("Entrar");
+		botonEntrar.setBackground(new Color(255, 255, 255));
+		botonEntrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		botonEntrar.setSize(40, 60);
+		botonEntrar.setFocusPainted(false);
 		PanelEntrar.add(botonEntrar);
 		
 		JButton botonRegistrarse = new JButton("Registrarse");
+		botonRegistrarse.setBackground(new Color(255, 255, 255));
+		botonRegistrarse.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		botonRegistrarse.setFocusPainted(false);
 		PanelEntrar.add(botonRegistrarse);
 		
 		JPanel panelCanciones = new JPanel();
-		panelPrincipal.add(panelCanciones, BorderLayout.WEST);
-		panelCanciones.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panelCanciones.setBounds(47, 89, 455, 491);
+		panelPrincipal.add(panelCanciones);
+		panelCanciones.setLayout(null);
+		JPanel cancionesAlfabetico = new JPanel();
+		JPanel cancionesRecientes = new JPanel();
+		JPanel cancionesFavoritas = new JPanel();
 		
-		JLabel LabelCanciones = new JLabel("Canciones: ");
-		panelCanciones.add(LabelCanciones);
+		JTabbedPane pestanyasCanciones = new JTabbedPane(JTabbedPane.TOP);
+		pestanyasCanciones.setBounds(0, 0, 455, 491);
+		pestanyasCanciones.add("Canciones A-Z", cancionesAlfabetico);
+		pestanyasCanciones.add("Canciones favoritas", cancionesFavoritas);
+		pestanyasCanciones.add("Canciones Recientes", cancionesRecientes);
+		panelCanciones.add(pestanyasCanciones);
+		
+		JPanel panelBuscador = new JPanel();
+		panelBuscador.setBounds(586, 89, 236, 59);
+		panelPrincipal.add(panelBuscador);
+		
+		JLabel JlBuscador = new JLabel("Buscar: ");
+		panelBuscador.add(JlBuscador);
+		
+		TfBuscador = new JTextField();
+		panelBuscador.add(TfBuscador);
+		TfBuscador.setColumns(10);
+		
+		
+			
+	
 	}
 		
 		
