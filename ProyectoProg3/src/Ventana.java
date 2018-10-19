@@ -8,6 +8,9 @@ import java.awt.FlowLayout;
 import javax.swing.border.LineBorder;
 import java.awt.Font;
 import java.awt.Panel;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Label;
 
 
@@ -17,13 +20,14 @@ public class Ventana extends JFrame {
 
 	String titulo = "Ventana Principal";
 	Dimension dimension = new Dimension(900, 900);
-	private JTextField TfBuscador;
+
 	
 	
 	public Ventana(){
 		setTitle(titulo);
 		setResizable(false);
 		setSize(dimension.width, dimension.height);
+		setLocation(300, 100);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		getContentPane().setLayout(new BorderLayout(0, 0));
@@ -60,9 +64,11 @@ public class Ventana extends JFrame {
 		PanelEntrar.add(botonRegistrarse);
 		
 		JPanel panelCanciones = new JPanel();
+		panelCanciones.setBorder(null);
 		panelCanciones.setBounds(47, 89, 455, 491);
 		panelPrincipal.add(panelCanciones);
 		panelCanciones.setLayout(null);
+		
 		JPanel cancionesAlfabetico = new JPanel();
 		JPanel cancionesRecientes = new JPanel();
 		JPanel cancionesFavoritas = new JPanel();
@@ -75,25 +81,32 @@ public class Ventana extends JFrame {
 		panelCanciones.add(pestanyasCanciones);
 		
 		JPanel panelBuscador = new JPanel();
-		panelBuscador.setBounds(586, 89, 236, 59);
+		panelBuscador.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panelBuscador.setBounds(586, 89, 236, 39);
 		panelPrincipal.add(panelBuscador);
 		
 		JLabel JlBuscador = new JLabel("Buscar: ");
+		JlBuscador.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panelBuscador.add(JlBuscador);
 		
-		TfBuscador = new JTextField();
+		JTextField TfBuscador = new JTextField();
 		panelBuscador.add(TfBuscador);
 		TfBuscador.setColumns(10);
 		
-		
+		botonRegistrarse.addActionListener(new ActionListener() {
 			
-	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				VentanaRegistro vr = new VentanaRegistro();
+				vr.setVisible(true);
+				
+			}
+		});
+		
 	}
 		
 		
-		
-	
-	
 	public static void main(String[] args) {
 		Ventana v = new Ventana();
 		v.setVisible(true);
