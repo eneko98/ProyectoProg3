@@ -51,7 +51,7 @@ public class Ventana extends JFrame {
 		panelPrincipal.add(panelCanciones, BorderLayout.WEST);
 		panelCanciones.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel LabelCanciones = new JLabel("New label");
+		JLabel LabelCanciones = new JLabel("Canciones: ");
 		panelCanciones.add(LabelCanciones);
 	}
 		
