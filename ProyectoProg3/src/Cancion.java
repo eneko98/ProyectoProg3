@@ -1,15 +1,25 @@
+import java.awt.Image;
 
 public class Cancion {
 	
-	String titulo;
-	String autor;
-	String fechaSubida;
-	Usuario creador;
+	private String titulo;
+	private String autor;
+	private String fechaSubida;
+	private Image caratula;
+	private Usuario creador;
 	
-	public Cancion(String titulo, String autor, String fechaSubida, Usuario creador) {
+	public Cancion(String titulo, String autor, String fechaSubida, Image caratula, Usuario creador) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.fechaSubida = fechaSubida;
+		this.caratula = caratula;
+		this.creador = creador;
+	}
+	public Cancion() {
+		this.titulo = "";
+		this.autor = "";
+		this.fechaSubida = "";
+		this.caratula = caratula;
 		this.creador = creador;
 	}
 
@@ -36,6 +46,14 @@ public class Cancion {
 	public void setFechaSubida(String fechaSubida) {
 		this.fechaSubida = fechaSubida;
 	}
+	
+	public Image getCaratula() {
+		return caratula;
+	}
+
+	public void setCaratula(Image caratula) {
+		this.caratula = caratula;
+	}
 
 	public Usuario getCreador() {
 		return creador;
@@ -45,12 +63,12 @@ public class Cancion {
 		this.creador = creador;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "Cancion [titulo=" + titulo + ", autor=" + autor + ", fechaSubida=" + fechaSubida + ", creador="
-				+ creador + "]";
+		return "Cancion [titulo= " + titulo + ", autor= " + autor + ", fechaSubida= " + fechaSubida + ", caratula= "
+				+ caratula + ", creador= " + creador + "]";
 	}
-	
 	public void reproducir() {
 		
 	}

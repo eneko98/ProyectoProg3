@@ -1,11 +1,12 @@
+import java.awt.Image;
 
 public class Lirica extends Cancion {
 
 
 	String letra;
 
-	public Lirica(String titulo, String autor, String fechaSubida, Usuario creador, String letra) {
-		super(titulo, autor, fechaSubida, creador);
+	public Lirica(String titulo, String autor, String fechaSubida, Image caratula, Usuario creador, String letra) {
+		super(titulo, autor, fechaSubida, caratula, creador);
 		this.letra = letra;
 	}
 

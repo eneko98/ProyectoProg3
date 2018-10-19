@@ -1,7 +1,9 @@
+import java.io.File;
 
 public class GestorCanciones {
 	
-	public void subirCancion() {
+	public void subirCancion(File file) {
+		Cancion c1 = new Cancion();
 		
 	}
 	
