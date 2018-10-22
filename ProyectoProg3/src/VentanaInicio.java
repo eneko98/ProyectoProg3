@@ -104,6 +104,17 @@ public class VentanaInicio extends JFrame {
 			}
 		});
 		
+
+		botonEntrar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				VentanaLoggin vl = new VentanaLoggin();
+				vl.setVisible(true);
+				
+			}
+		});
+		
 	}
 		
 		

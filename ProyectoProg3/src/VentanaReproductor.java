@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
-public class VentanaReproductor {
+public class VentanaReproductor extends JFrame {
 
 	private JFrame frame;
 

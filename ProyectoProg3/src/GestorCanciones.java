@@ -2,7 +2,7 @@ import java.io.File;
 
 public class GestorCanciones {
 	
-	public void subirCancion(File file) {
+	public void subirCancion() {
 		Cancion c1 = new Cancion();
 		
 	}
