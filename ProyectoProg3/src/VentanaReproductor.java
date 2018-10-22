@@ -17,6 +17,7 @@ public class VentanaReproductor extends JFrame {
 
 	public VentanaReproductor() {
 		
+		
 			setTitle(titulo);
 			setResizable(false);
 			setBounds(100, 100, 652, 406);
