@@ -14,14 +14,11 @@ import java.awt.event.ActionListener;
 import java.awt.Label;
 
 
-
-
 public class VentanaInicio extends JFrame {
 
 	String titulo = "Ventana Principal";
 	Dimension dimension = new Dimension(900, 900);
 
-	
 	
 	public VentanaInicio(){
 		setTitle(titulo);

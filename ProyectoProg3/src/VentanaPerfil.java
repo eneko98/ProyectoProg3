@@ -1,56 +1,33 @@
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JLabel;
 import java.awt.Font;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 public class VentanaPerfil extends JFrame {
-
-	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaPerfil window = new VentanaPerfil();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+	
+		
 	public VentanaPerfil() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 544, 502);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		
+		setResizable(false);
+		setBounds(100, 100, 544, 502);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
 		panel.setBounds(12, 13, 223, 218);
-		frame.getContentPane().add(panel);
+		getContentPane().add(panel);
 		
 		JLabel lblNombre = new JLabel("Nombre :");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNombre.setBounds(255, 13, 72, 26);
-		frame.getContentPane().add(lblNombre);
+		getContentPane().add(lblNombre);
+		
 	}
-
+	public static void main(String[] args) {
+		VentanaPerfil vp = new VentanaPerfil();
+		vp.setVisible(true);
+	}
 }
