@@ -1,9 +1,13 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
+import javax.media.Manager;
+import javax.media.Player;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,10 +18,26 @@ public class VentanaReproductor extends JFrame {
 	
 	String titulo = "Ventana Reproductor";
 	Dimension dimension = new Dimension(900, 900);
-
+	
+	URL urlArchivoMusica;
+	Player reproductor;
+	
+	
 	public VentanaReproductor() {
-		
-		
+		try {
+			urlArchivoMusica = new URL("file:/C:/Users/Diazl//Desktop/EminemTheRinger.mp3");
+			reproductor = Manager.createRealizedPlayer(urlArchivoMusica);
+			Component controles = reproductor.getControlPanelComponent();
+			
+			if(controles != null) {
+				getContentPane().add(controles);
+				controles.setLocation(12,191);
+				controles.setSize(283,25);
+			}
+		} catch (Exception e) {
+			System.out.println("Se ha encontrado un error al trata de reproducir el archivo");
+		}
+	
 			setTitle(titulo);
 			setResizable(false);
 			setBounds(100, 100, 652, 406);
@@ -47,63 +67,13 @@ public class VentanaReproductor extends JFrame {
 			botonEditarLirica.setFocusPainted(false);
 			panelBotonesLirica.add(botonEditarLirica);
 			
-			JPanel panelBotonesReproductor = new JPanel();
-			panelBotonesReproductor.setBackground(new Color(255, 255, 255));
-			panelBotonesReproductor.setBounds(12, 231, 293, 63);
-			getContentPane().add(panelBotonesReproductor);
-			panelBotonesReproductor.setLayout(null);
-			
-			JButton botonIzquierda = new JButton("");
-			botonIzquierda.setForeground(new Color(255, 255, 255));
-			botonIzquierda.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-				}
-			});
-			botonIzquierda.setBackground(Color.WHITE);
-			botonIzquierda.setBounds(0, 0, 65, 61);
-			botonIzquierda.setIcon(new ImageIcon(VentanaReproductor.class.getResource("/imagenes/Back.png")));
-			botonIzquierda.setBorder(null);
-			botonIzquierda.setFocusPainted(false);
-			panelBotonesReproductor.add(botonIzquierda);
-			
-			JButton botonDerecha = new JButton("");
-			botonDerecha.setForeground(new Color(255, 255, 255));
-			botonDerecha.setIcon(new ImageIcon(VentanaReproductor.class.getResource("/imagenes/Next.png")));
-			botonDerecha.setBackground(Color.WHITE);
-			botonDerecha.setBounds(228, 0, 65, 61);
-			botonDerecha.setBorder(null);
-			botonDerecha.setFocusPainted(false);
-			panelBotonesReproductor.add(botonDerecha);
-			
-			JButton botonPause = new JButton("");
-			botonPause.setForeground(new Color(255, 255, 255));
-			botonPause.setIcon(new ImageIcon(VentanaReproductor.class.getResource("/imagenes/Pause.png")));
-			botonPause.setBackground(Color.WHITE);
-			botonPause.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-				}
-			});
-			botonPause.setBounds(155, 0, 65, 61);
-			botonPause.setBorder(null);
-			botonPause.setFocusPainted(false);
-			panelBotonesReproductor.add(botonPause);
-			
-			JButton botonPlay = new JButton("");
-			botonPlay.setForeground(new Color(255, 255, 255));
-			botonPlay.setIcon(new ImageIcon(VentanaReproductor.class.getResource("/imagenes/Play.png")));
-			botonPlay.setBackground(Color.WHITE);
-			botonPlay.setBounds(77, 0, 66, 61);
-			botonPlay.setBorder(null);
-			botonPlay.setFocusPainted(false);
-			panelBotonesReproductor.add(botonPlay);
-			
 			JButton botonCancelar = new JButton("Atras");
 			botonCancelar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 				}
 			});
 			botonCancelar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			botonCancelar.setBounds(12, 307, 102, 39);
+			botonCancelar.setBounds(12, 278, 102, 39);
 			botonCancelar.setFocusPainted(false);
 			getContentPane().add(botonCancelar);
 		}
