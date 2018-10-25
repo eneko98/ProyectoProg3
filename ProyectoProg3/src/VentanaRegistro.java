@@ -96,6 +96,19 @@ public class VentanaRegistro extends JFrame {
 			}
 		});
 		
+		botonSiguiente.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				VentanaInicio v = new VentanaInicio();
+				v.setVisible(true);
+				VentanaPerfil vp = new VentanaPerfil();
+				vp.setVisible(true);
+				
+			}
+		});
+		
 	}
 	
 	public static void main(String[] args) {

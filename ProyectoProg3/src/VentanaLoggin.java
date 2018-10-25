@@ -60,6 +60,9 @@ public class VentanaLoggin extends JFrame{
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				VentanaPerfil vp = new VentanaPerfil();
+				vp.setVisible(true);
 			}
 		});
 		btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 15));
