@@ -101,6 +101,7 @@ public class VentanaInicio extends JFrame {
 			}
 		});
 		
+
 		botonEntrar.addActionListener(new ActionListener() {
 			
 			@Override

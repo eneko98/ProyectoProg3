@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,12 +12,30 @@ import java.awt.event.ActionEvent;
 
 public class VentanaLoggin extends JFrame{
 
+
+	private JTextField textField;
+	private JPasswordField passwordField;
+	
+
 	public VentanaLoggin() {
+
 	
 		setBounds(100, 100, 347, 179);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		setResizable(false);
+
+		
+		String titulo = "Ventana Login";
+		Dimension dimension = new Dimension(400, 200);
+		setTitle(titulo);
+		setResizable(false);
+		setSize(325, 181);
+		setLocation(300, 100);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		getContentPane().setLayout(null);
+
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -37,6 +56,7 @@ public class VentanaLoggin extends JFrame{
 		passwordField.setBounds(156, 58, 116, 24);
 		getContentPane().add(passwordField);
 		
+
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -46,10 +66,20 @@ public class VentanaLoggin extends JFrame{
 		btnAceptar.setBounds(106, 93, 97, 25);
 		btnAceptar.setFocusPainted(false);
 		getContentPane().add(btnAceptar);
-	}
+	
+		JButton botonAceptar = new JButton("Aceptar");
+		botonAceptar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		botonAceptar.setBounds(106, 93, 97, 25);
+		botonAceptar.setFocusPainted(false);
+		getContentPane().add(botonAceptar);
+		
+
+	}	
+
 	public static void main(String[] args) {
 		VentanaLoggin vl = new VentanaLoggin();
 		vl.setVisible(true);
 	}
+	
 }
 
