@@ -9,8 +9,8 @@ public class BD {
 
 	private static Exception lastError = null;  // Informaciï¿½n de ï¿½ltimo error SQL ocurrido
 	// TODO CAMBIAR CONSTANTES
-	private static final String NOMBRETABLA = "Analitica";
-	private static final String COLUMNAS_TABLA = " (codigo string, contador integer)";
+	private static final String NOMBRETABLA = "Usuario";
+	private static final String COLUMNAS_TABLA = " (nombre string, contraseña string, correo string, codUsuario string)";
 	/** Inicializa una BD SQLITE y devuelve una conexiï¿½n con ella
 	 * @param nombreBD	Nombre de fichero de la base de datos
 	 * @return	Conexiï¿½n con la base de datos indicada. Si hay algï¿½n error, se devuelve null
