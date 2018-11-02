@@ -120,7 +120,7 @@ public class BD {
 	 * @return	true si la inserci�n es correcta, false en caso contrario
 	 */
 	public static boolean usuarioInsert( Statement st, Usuario usuario) {
-		String sentSQL = "";
+		String sentSQL = "";	
 		try {
 			sentSQL = "insert into usuario values('" + secu(usuario.getNombre()) + "', " + usuario.getContrasenya() + ", "+ usuario.getcorreo() + ", "+ usuario.getCodUsuario()+")";
 			int val = st.executeUpdate( sentSQL );

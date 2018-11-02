@@ -4,11 +4,11 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="External/mysql-connector-java-8.0.13.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/Programación/Programacion 3/Programa Vlcj/vlcj-3.10.1/vlcj-3.10.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/Programación/Programacion 3/Programa Vlcj/sqlite-jdbc-3.21.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/3º-Simestre 1/Programacion/Proyecto Prog3/Reproductor/JMF-2.1.1e/lib/customizer.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/3º-Simestre 1/Programacion/Proyecto Prog3/Reproductor/JMF-2.1.1e/lib/jmf.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/3º-Simestre 1/Programacion/Proyecto Prog3/Reproductor/JMF-2.1.1e/lib/mediaplayer.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/3º-Simestre 1/Programacion/Proyecto Prog3/Reproductor/JMF-2.1.1e/lib/multiplayer.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eneko/Desktop/vlcj-3.10.1/sqlite-jdbc-3.23.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eneko/Desktop/vlcj-3.10.1/vlcj-3.10.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eneko/Desktop/JMF-2.1.1e/lib/customizer.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eneko/Desktop/JMF-2.1.1e/lib/jmf.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eneko/Desktop/JMF-2.1.1e/lib/mediaplayer.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eneko/Desktop/JMF-2.1.1e/lib/multiplayer.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
