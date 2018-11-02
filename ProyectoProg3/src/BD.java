@@ -119,12 +119,12 @@ public class BD {
 	 * @param contador	contador a aï¿½adir a esa nueva fila de la BD
 	 * @return	true si la inserciï¿½n es correcta, false en caso contrario
 	 */
-	public static boolean analiticaInsert( Statement st, String codigo, int contador ) {
+	public static boolean usuarioInsert( Statement st, Usuario usuario) {
 		String sentSQL = "";
 		try {
-			sentSQL = "insert into analitica values('" + secu(codigo) + "', " + contador + ")";
+			sentSQL = "insert into usuario values('" + secu(usuario.getNombre()) + "', " + usuario.getContrasenya() + ", "+ usuario.getcorreo() + ", "+ usuario.getCodUsuario()+")";
 			int val = st.executeUpdate( sentSQL );
-			log( Level.INFO, "BD fila aï¿½adida " + val + " fila\t" + sentSQL, null );
+			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
 				log( Level.SEVERE, "Error en insert de BD\t" + sentSQL, null );
 				return false;  
@@ -143,14 +143,14 @@ public class BD {
 	 * @param codigo	Cï¿½digo a buscar en la tabla
 	 * @return	contador cargado desde la base de datos para ese cï¿½digo, Integer.MAX_VALUE si hay cualquier error
 	 */
-	public static int analiticaSelect( Statement st, String codigo ) {
+	public static int usuarioSelect( Statement st, Usuario usuario ) {
 		String sentSQL = "";
 		try {
 			int ret = Integer.MAX_VALUE;
-			sentSQL = "select * from analitica where codigo='" + codigo + "'";
+			sentSQL = "select * from analitica where Codigo Usuario='" + usuario.getCodUsuario() + "'";
 			ResultSet rs = st.executeQuery( sentSQL );
 			if (rs.next()) {
-				ret = rs.getInt( "contador" );
+				ret = rs.getInt( "Codigo Usuario" );
 			}
 			rs.close();
 			log( Level.INFO, "BD\t" + sentSQL, null );
@@ -169,10 +169,10 @@ public class BD {
 	 * @param contador	Contador a modificar de ese cï¿½digo
 	 * @return	true si la inserciï¿½n es correcta, false en caso contrario
 	 */
-	public static boolean analiticaUpdate( Statement st, String codigo, int contador ) {
+	public static boolean analiticaUpdate( Statement st, Usuario usuario ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update analitica set contador=" + contador + " where codigo='" + codigo + "'";
+			sentSQL = "update usuario set contraseña=" + usuario.contrasenya + " where codigo='" + usuario.getCodUsuario() + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -193,10 +193,10 @@ public class BD {
 	 * @param codigo	Cï¿½digo de analï¿½tica a borrar de la base de datos
 	 * @return	true si el borrado es correcto, false en caso contrario
 	 */
-	public static boolean analiticaDelete( Statement st, String codigo ) {
+	public static boolean usuarioDelete( Statement st, Usuario usuario ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "delete from analitica where codigo='" + secu(codigo) + "'";
+			sentSQL = "delete from usuario where codigo='" + secu(usuario.getCodUsuario()) + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
 			return (val==1);
