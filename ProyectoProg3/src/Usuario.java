@@ -4,13 +4,13 @@ public class Usuario {
 	public String nombre;
 	public String contrasenya;
 	public String correo;
-	public String codUsuario;
 	
-	public Usuario(String nombre, String contrasenya, String correo , String codUsuario) {
+	
+	public Usuario(String nombre, String contrasenya, String correo) {
 		this.nombre = nombre;
 		this.contrasenya = contrasenya;
 		this.correo = correo;
-		this.codUsuario = codUsuario;
+		
 	}
 
 	public String getNombre() {
@@ -37,17 +37,11 @@ public class Usuario {
 		this.correo = correo;
 	}
 	
-	public String getCodUsuario() {
-		return codUsuario;
-	}
-
-	public void setCodUsuario(String codUsuario) {
-		this.codUsuario = codUsuario;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "Usuario  Nombre: " + nombre + ", Contraseña: " + contrasenya + "Correo: " + correo + "Codigo Usuario: "+ codUsuario + "]";
+		return "Usuario  Nombre: " + nombre + ", Contraseña: " + contrasenya + "Correo: " + correo + "Codigo Usuario: " + "]";
 	}
 	
 

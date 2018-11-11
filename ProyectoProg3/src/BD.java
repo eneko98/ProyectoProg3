@@ -122,7 +122,44 @@ public class BD {
 	public static boolean usuarioInsert( Statement st, Usuario usuario) {
 		String sentSQL = "";	
 		try {
-			sentSQL = "insert into usuario values('" + secu(usuario.getNombre()) + "', " + usuario.getContrasenya() + ", "+ usuario.getcorreo() + ", "+ usuario.getCodUsuario()+")";
+			sentSQL = "insert into usuario values('" + secu(usuario.getNombre()) + "', '" + secu(usuario.getContrasenya()) + "', '"+ secu(usuario.getcorreo()) +  "')";
+			int val = st.executeUpdate( sentSQL );
+			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
+			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
+				log( Level.SEVERE, "Error en insert de BD\t" + sentSQL, null );
+				return false;  
+			}
+			return true;
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			lastError = e;
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public static boolean cancionInsert( Statement st, Cancion cancion) {
+		String sentSQL = "";	
+		try {
+			sentSQL = "insert into cancion values('" + secu(cancion.getTitulo()) + "', '" + secu(cancion.getAutor()) + "', '"+ secu(cancion.getFechaSubida()) + "', '"+ cancion.getCaratula()+ "', '" + cancion.getCreador() + "'";
+			int val = st.executeUpdate( sentSQL );
+			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
+			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
+				log( Level.SEVERE, "Error en insert de BD\t" + sentSQL, null );
+				return false;  
+			}
+			return true;
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			lastError = e;
+			e.printStackTrace();
+			return false;
+		}
+	}
+	public static boolean LiricaInsert( Statement st, Lirica lirica) {
+		String sentSQL = "";	
+		try {
+			sentSQL = "insert into lirica values('" + secu(lirica.getLetra()) + "', ";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
@@ -143,14 +180,53 @@ public class BD {
 	 * @param codigo	Cï¿½digo a buscar en la tabla
 	 * @return	contador cargado desde la base de datos para ese cï¿½digo, Integer.MAX_VALUE si hay cualquier error
 	 */
-	public static int usuarioSelect( Statement st, Usuario usuario ) {
+	public static int usuarioSelect( Statement st, Usuario usuario, String codSelect ) {
 		String sentSQL = "";
 		try {
 			int ret = Integer.MAX_VALUE;
-			sentSQL = "select * from analitica where Codigo Usuario='" + usuario.getCodUsuario() + "'";
+			sentSQL = "select * from usuario where Codigo Usuario='"  + codSelect + "'";
 			ResultSet rs = st.executeQuery( sentSQL );
 			if (rs.next()) {
 				ret = rs.getInt( "Codigo Usuario" );
+			}
+			rs.close();
+			log( Level.INFO, "BD\t" + sentSQL, null );
+			return ret;
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			lastError = e;
+			e.printStackTrace();
+			return Integer.MAX_VALUE;
+		}
+	}
+	
+	public static int cancionSelect( Statement st, Cancion cancion, String codSelect ) {
+		String sentSQL = "";
+		try {
+			int ret = Integer.MAX_VALUE;
+			sentSQL = "select * from cancion where Codigo cancion='" + codSelect + "'";
+			ResultSet rs = st.executeQuery( sentSQL );
+			if (rs.next()) {
+				ret = rs.getInt( "Codigo cancion" );
+			}
+			rs.close();
+			log( Level.INFO, "BD\t" + sentSQL, null );
+			return ret;
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			lastError = e;
+			e.printStackTrace();
+			return Integer.MAX_VALUE;
+		}
+	}
+	public static int LiricaSelect( Statement st, Lirica lirica, String codSelect ) {
+		String sentSQL = "";
+		try {
+			int ret = Integer.MAX_VALUE;
+			sentSQL = "select * from lirica where Codigo cancion='" + codSelect + "'";
+			ResultSet rs = st.executeQuery( sentSQL );
+			if (rs.next()) {
+				ret = rs.getInt( "Codigo cancion" );
 			}
 			rs.close();
 			log( Level.INFO, "BD\t" + sentSQL, null );
@@ -169,10 +245,46 @@ public class BD {
 	 * @param contador	Contador a modificar de ese cï¿½digo
 	 * @return	true si la inserciï¿½n es correcta, false en caso contrario
 	 */
-	public static boolean analiticaUpdate( Statement st, Usuario usuario ) {
+	public static boolean usuarioUpdate( Statement st, Usuario usuario, String codUpdate ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update usuario set contraseña=" + usuario.contrasenya + " where codigo='" + usuario.getCodUsuario() + "'";
+			sentSQL = "update usuario set nombre=" + ", nombre= " + usuario.getNombre() + ", contrasenya= "+ usuario.getContrasenya() + ", correo= " + usuario.getcorreo() + "where codigo='" + codUpdate + "'";
+			int val = st.executeUpdate( sentSQL );
+			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
+			if (val!=1) {  // Se tiene que modificar 1 - error si no
+				log( Level.SEVERE, "Error en update de BD\t" + sentSQL, null );
+				return false;  
+			}
+			return true;
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			lastError = e;
+			e.printStackTrace();
+			return false;
+		}
+	}
+	public static boolean cancionUpdate( Statement st, Cancion cancion, String codUpdate ) {
+		String sentSQL = "";
+		try {
+			sentSQL = "update cancion set titulo=" + ", titulo=" + cancion.getTitulo() + ", autor="+ cancion.getAutor() + ", fecha de subida= "+ cancion.getFechaSubida() + ", caratula= "+ cancion.getCaratula() + ", creador=  " + cancion.getCreador() + "where codCancion='" + codUpdate + "'";
+			int val = st.executeUpdate( sentSQL );
+			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
+			if (val!=1) {  // Se tiene que modificar 1 - error si no
+				log( Level.SEVERE, "Error en update de BD\t" + sentSQL, null );
+				return false;  
+			}
+			return true;
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			lastError = e;
+			e.printStackTrace();
+			return false;
+		}
+	}
+	public static boolean LiricaUpdate( Statement st, Lirica lirica, String codUpdate ) {
+		String sentSQL = "";
+		try {
+			sentSQL = "update cancion set titulo=" + ", letra=" + lirica.getLetra() + "where codLirica='" + codUpdate + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -193,10 +305,39 @@ public class BD {
 	 * @param codigo	Cï¿½digo de analï¿½tica a borrar de la base de datos
 	 * @return	true si el borrado es correcto, false en caso contrario
 	 */
-	public static boolean usuarioDelete( Statement st, Usuario usuario ) {
+	public static boolean usuarioDelete( Statement st, Usuario usuario, String codDelete ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "delete from usuario where codigo='" + secu(usuario.getCodUsuario()) + "'";
+			sentSQL = "delete from usuario where codigo='" + codDelete + "'";
+			int val = st.executeUpdate( sentSQL );
+			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
+			return (val==1);
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			lastError = e;
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public static boolean cancionDelete( Statement st, Cancion cancion, String codDelete ) {
+		String sentSQL = "";
+		try {
+			sentSQL = "delete from cancion where codigo='" + codDelete + "'";
+			int val = st.executeUpdate( sentSQL );
+			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
+			return (val==1);
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			lastError = e;
+			e.printStackTrace();
+			return false;
+		}
+	}
+	public static boolean liricaDelete( Statement st, Lirica lirica, String codDelete ) {
+		String sentSQL = "";
+		try {
+			sentSQL = "delete from lirica where codigo='" + codDelete + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
 			return (val==1);

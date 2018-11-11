@@ -8,6 +8,7 @@ public class Cancion {
 	private Image caratula;
 	private Usuario creador;
 	
+	
 	public Cancion(String titulo, String autor, String fechaSubida, Image caratula, Usuario creador) {
 		this.titulo = titulo;
 		this.autor = autor;
@@ -63,6 +64,7 @@ public class Cancion {
 		this.creador = creador;
 	}
 
+	
 	
 	@Override
 	public String toString() {

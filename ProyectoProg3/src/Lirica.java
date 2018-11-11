@@ -4,6 +4,7 @@ public class Lirica extends Cancion {
 
 
 	String letra;
+	
 
 	public Lirica(String titulo, String autor, String fechaSubida, Image caratula, Usuario creador, String letra) {
 		super(titulo, autor, fechaSubida, caratula, creador);
