@@ -23,7 +23,7 @@ public class BD {
 		    return con;
 		} catch (ClassNotFoundException | SQLException e) {
 			lastError = e;
-			log( Level.SEVERE, "Error en conexiï¿½n de base de datos " + nombreBD, e );
+			log( Level.SEVERE, "Error en conexion de base de datos " + nombreBD, e );
 			e.printStackTrace();
 			return null;
 		}
@@ -61,7 +61,7 @@ public class BD {
 			return statement;
 		} catch (SQLException e) {
 			lastError = e;
-			log( Level.SEVERE, "Error en creaciï¿½n de base de datos", e );
+			log( Level.SEVERE, "Error en creacion de base de datos", e );
 			e.printStackTrace();
 			return null;
 		}
@@ -141,7 +141,7 @@ public class BD {
 	public static boolean cancionInsert( Statement st, Cancion cancion) {
 		String sentSQL = "";	
 		try {
-			sentSQL = "insert into cancion values('" + secu(cancion.getTitulo()) + "', '" + secu(cancion.getAutor()) + "', '"+ secu(cancion.getFechaSubida()) + "', '"+ cancion.getCaratula()+ "', '" + cancion.getCreador() + "'";
+			sentSQL = "insert into cancion values('" + secu(cancion.getTitulo()) + "', '" + secu(cancion.getAutor()) + "', '"+ secu(cancion.getFechaSubida()) + "', '"+ cancion.getCaratula()+ "', '" + cancion.getCreador() + "')";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
@@ -159,7 +159,7 @@ public class BD {
 	public static boolean LiricaInsert( Statement st, Lirica lirica) {
 		String sentSQL = "";	
 		try {
-			sentSQL = "insert into lirica values('" + secu(lirica.getLetra()) + "', ";
+			sentSQL = "insert into lirica values('" + secu(lirica.getLetra()) + "')";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
@@ -204,10 +204,10 @@ public class BD {
 		String sentSQL = "";
 		try {
 			int ret = Integer.MAX_VALUE;
-			sentSQL = "select * from cancion where Codigo cancion='" + codSelect + "'";
+			sentSQL = "select * from cancion where Codigo Cancion='" + codSelect + "'";
 			ResultSet rs = st.executeQuery( sentSQL );
 			if (rs.next()) {
-				ret = rs.getInt( "Codigo cancion" );
+				ret = rs.getInt( "Codigo Cancion" );
 			}
 			rs.close();
 			log( Level.INFO, "BD\t" + sentSQL, null );
@@ -223,10 +223,10 @@ public class BD {
 		String sentSQL = "";
 		try {
 			int ret = Integer.MAX_VALUE;
-			sentSQL = "select * from lirica where Codigo cancion='" + codSelect + "'";
+			sentSQL = "select * from lirica where Codigo Lirica='" + codSelect + "'";
 			ResultSet rs = st.executeQuery( sentSQL );
 			if (rs.next()) {
-				ret = rs.getInt( "Codigo cancion" );
+				ret = rs.getInt( "Codigo Lirica" );
 			}
 			rs.close();
 			log( Level.INFO, "BD\t" + sentSQL, null );
@@ -248,7 +248,7 @@ public class BD {
 	public static boolean usuarioUpdate( Statement st, Usuario usuario, String codUpdate ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update usuario set nombre=" + ", nombre= " + usuario.getNombre() + ", contrasenya= "+ usuario.getContrasenya() + ", correo= " + usuario.getcorreo() + "where codigo='" + codUpdate + "'";
+			sentSQL = "update usuario set nombre='" + usuario.getNombre() + "', contrasenya='"+ usuario.getContrasenya() + "', correo='" + usuario.getcorreo() + "' where codigo='" + codUpdate + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -266,7 +266,7 @@ public class BD {
 	public static boolean cancionUpdate( Statement st, Cancion cancion, String codUpdate ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update cancion set titulo=" + ", titulo=" + cancion.getTitulo() + ", autor="+ cancion.getAutor() + ", fecha de subida= "+ cancion.getFechaSubida() + ", caratula= "+ cancion.getCaratula() + ", creador=  " + cancion.getCreador() + "where codCancion='" + codUpdate + "'";
+			sentSQL = "update cancion set titulo='" + cancion.getTitulo() + "', autor='"+ cancion.getAutor() + "', fecha de subida='"+ cancion.getFechaSubida() + "', caratula='"+ cancion.getCaratula() + "', creador='" + cancion.getCreador() +"' where codCancion='" + codUpdate + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -284,7 +284,7 @@ public class BD {
 	public static boolean LiricaUpdate( Statement st, Lirica lirica, String codUpdate ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update cancion set titulo=" + ", letra=" + lirica.getLetra() + "where codLirica='" + codUpdate + "'";
+			sentSQL = "update cancion set letra='" + lirica.getLetra() +"' where codLirica='" + codUpdate + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
