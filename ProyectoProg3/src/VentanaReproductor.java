@@ -3,49 +3,25 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JProgressBar;
 import javax.swing.JTextPane;
 
-import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
-import uk.co.caprica.vlcj.player.MediaPlayer;
-import uk.co.caprica.vlcj.player.MediaPlayerFactory;
-import uk.co.caprica.vlcj.player.embedded.windows.Win32FullScreenStrategy;
 
-import java.awt.BorderLayout;
-import javax.swing.SwingConstants;
-
-
-import javax.swing.BoxLayout;
 
 public class VentanaReproductor extends JFrame {
 	
 	String titulo = "Ventana Reproductor";
 	Dimension dimension = new Dimension(900, 900);
 	
-	// Atributos de VLCj
 	
-	//EmbeddedMediaPlayerComponent mediacom = new EmbeddedMediaPlayerComponent();   
-	
-	
-	public VentanaReproductor() {
+	public VentanaReproductor(String cancion) {		
 		
-		//Intento creacion reproductor
-		
-			String mediaPath = "C:\\Users\\Diazl\\Desktop\\Dani\\Universidad de Deusto\\3º-Simestre 1\\Programacion\\Proyecto Prog3"; 	
-		   // mplayer.setAudioTrack(1);
-			
-			MediaPlayerFactory mpf = new MediaPlayerFactory();
-			EmbeddedMediaPlayerComponent emp = (EmbeddedMediaPlayerComponent) mpf.newEmbeddedMediaPlayer();
-			
-			
-		
-			setTitle(titulo);
+		setTitle(titulo);
 			setResizable(false);
 			setBounds(100, 100, 652, 406);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -83,6 +59,9 @@ public class VentanaReproductor extends JFrame {
 			JButton botonCancelar = new JButton("Atras");
 			botonCancelar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					setVisible(false);
+					VentanaInicio vi = new VentanaInicio();
+					vi.setVisible(true);
 				}
 			});
 			botonCancelar.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -126,7 +105,7 @@ public class VentanaReproductor extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					//mplayer.playMedia(mediaPath);
+				
 				}
 			});
 			panel.add(botonPlay);
@@ -142,13 +121,11 @@ public class VentanaReproductor extends JFrame {
 			barraReproductor.setBounds(12, 208, 283, 14);
 			getContentPane().add(barraReproductor);
 		}
-	
-	
-	
+
 	public static void main(String[] args) {
-		VentanaReproductor vr = new VentanaReproductor();
+		String cancion = "C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/3º-Simestre 1/Programacion/Proyecto Prog3/EminemTheRinger.mp3";
+		VentanaReproductor vr = new VentanaReproductor(cancion);
 		vr.setVisible(true);
-		MediaPlayer mplayer;
 		
 	}
 }

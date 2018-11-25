@@ -32,7 +32,6 @@ public class VentanaLoggin extends JFrame{
 		setResizable(false);
 		setSize(325, 181);
 		setLocation(300, 100);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		getContentPane().setLayout(null);
 
