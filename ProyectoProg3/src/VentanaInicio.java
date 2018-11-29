@@ -74,8 +74,23 @@ public class VentanaInicio extends JFrame {
 		JTabbedPane pestanyasCanciones = new JTabbedPane(JTabbedPane.TOP);
 		pestanyasCanciones.setBounds(0, 0, 455, 491);
 		pestanyasCanciones.add("Canciones A-Z", cancionesAlfabetico);
+		cancionesAlfabetico.setLayout(null);
+		
+		JList listaCancionesAlfabetico = new JList();
+		listaCancionesAlfabetico.setBounds(0, 453, 450, -452);
+		cancionesAlfabetico.add(listaCancionesAlfabetico);
 		pestanyasCanciones.add("Canciones favoritas", cancionesFavoritas);
+		cancionesFavoritas.setLayout(null);
+		
+		JList listaCancionesFavoritas = new JList();
+		listaCancionesFavoritas.setBounds(441, 0, -440, 461);
+		cancionesFavoritas.add(listaCancionesFavoritas);
 		pestanyasCanciones.add("Canciones Recientes", cancionesRecientes);
+		cancionesRecientes.setLayout(null);
+		
+		JList listaCancionesRecientes = new JList();
+		listaCancionesRecientes.setBounds(0, 448, 450, -447);
+		cancionesRecientes.add(listaCancionesRecientes);
 		panelCanciones.add(pestanyasCanciones);
 		
 		JPanel panelBuscador = new JPanel();

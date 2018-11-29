@@ -9,8 +9,11 @@ public class BD {
 
 	private static Exception lastError = null;  // Informaciï¿½n de ï¿½ltimo error SQL ocurrido
 	// TODO CAMBIAR CONSTANTES
-	private static final String NOMBRETABLA = "Usuario";
-	private static final String COLUMNAS_TABLA = " (nombre string, contraseña string, correo string, codUsuario string)";
+	private static final String NOMBRETABLAUSUARIO = "Usuario";
+	private static final String COLUMNAS_TABLA_USUARIO = " (nombre string PRIMARY KEY, contraseña string, correo string)";
+	private static final String NOMBRETABLACANCION = "Cancion";
+	private static final String COLUMNAS_TABLA_CANCION = " (titulo string PRIMARY KEY, autor string, fechaSubida string, creador Usuario , lirica Lirica)";
+
 	/** Inicializa una BD SQLITE y devuelve una conexiï¿½n con ella
 	 * @param nombreBD	Nombre de fichero de la base de datos
 	 * @return	Conexiï¿½n con la base de datos indicada. Si hay algï¿½n error, se devuelve null
@@ -55,7 +58,9 @@ public class BD {
 			Statement statement = con.createStatement();
 			statement.setQueryTimeout(30);  // poner timeout 30 msg
 			try {
-				statement.executeUpdate("create table "+NOMBRETABLA+COLUMNAS_TABLA);
+				statement.executeUpdate("create table "+NOMBRETABLAUSUARIO+COLUMNAS_TABLA_USUARIO);
+				statement.executeUpdate("create table "+NOMBRETABLACANCION+COLUMNAS_TABLA_CANCION);
+
 			} catch (SQLException e) {} // Tabla ya existe. Nada que hacer
 			log( Level.INFO, "Creada base de datos", null );
 			return statement;
@@ -76,7 +81,8 @@ public class BD {
 		try {
 			Statement statement = con.createStatement();
 			statement.setQueryTimeout(30);  // poner timeout 30 msg
-			statement.executeUpdate("drop table if exists "+NOMBRETABLA);
+			statement.executeUpdate("drop table if exists "+NOMBRETABLAUSUARIO);
+			statement.executeUpdate("drop table if exists "+NOMBRETABLACANCION);
 			log( Level.INFO, "Reiniciada base de datos", null );
 			return usarCrearTablasBD( con );
 		} catch (SQLException e) {
@@ -156,87 +162,50 @@ public class BD {
 			return false;
 		}
 	}
-	public static boolean LiricaInsert( Statement st, Lirica lirica) {
-		String sentSQL = "";	
-		try {
-			sentSQL = "insert into lirica values('" + secu(lirica.getLetra()) + "')";
-			int val = st.executeUpdate( sentSQL );
-			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
-			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
-				log( Level.SEVERE, "Error en insert de BD\t" + sentSQL, null );
-				return false;  
-			}
-			return true;
-		} catch (SQLException e) {
-			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
-			lastError = e;
-			e.printStackTrace();
-			return false;
-		}
-	}
 
 	/** Realiza una consulta a la tabla abierta de la BD, usando la sentencia SELECT de SQL
 	 * @param st	Sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente a la analitica)
-	 * @param codigo	Cï¿½digo a buscar en la tabla
 	 * @return	contador cargado desde la base de datos para ese cï¿½digo, Integer.MAX_VALUE si hay cualquier error
 	 */
-	public static int usuarioSelect( Statement st, Usuario usuario, String codSelect ) {
+	public static Usuario usuarioSelect( Statement st, Usuario usuario) {
 		String sentSQL = "";
+		Usuario user = null;
 		try {
-			int ret = Integer.MAX_VALUE;
-			sentSQL = "select * from usuario where Codigo Usuario='"  + codSelect + "'";
+			sentSQL = "select * from usuario where nombre='"  + usuario.getNombre() + "'";
 			ResultSet rs = st.executeQuery( sentSQL );
+			
 			if (rs.next()) {
-				ret = rs.getInt( "Codigo Usuario" );
+				user = new Usuario(rs.getString("nombre"), rs.getString("contraseña"), rs.getString("correo"));
 			}
 			rs.close();
 			log( Level.INFO, "BD\t" + sentSQL, null );
-			return ret;
 		} catch (SQLException e) {
 			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
 			lastError = e;
 			e.printStackTrace();
-			return Integer.MAX_VALUE;
+			
 		}
+		return user;
 	}
 	
-	public static int cancionSelect( Statement st, Cancion cancion, String codSelect ) {
+	public static Cancion cancionSelect( Statement st, Cancion cancion) {
 		String sentSQL = "";
+		Cancion song = null;
 		try {
-			int ret = Integer.MAX_VALUE;
-			sentSQL = "select * from cancion where Codigo Cancion='" + codSelect + "'";
+			
+			sentSQL = "select * from cancion where titulo='" + cancion.getTitulo() + "'";
 			ResultSet rs = st.executeQuery( sentSQL );
 			if (rs.next()) {
-				ret = rs.getInt( "Codigo Cancion" );
+				//song = new Cancion(rs.getString("titulo"), rs.getString("autor"), rs.getString("fechaSubida") , rs.getString("creador"), rs.getString("lirica"));
 			}
 			rs.close();
 			log( Level.INFO, "BD\t" + sentSQL, null );
-			return ret;
 		} catch (SQLException e) {
 			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
 			lastError = e;
 			e.printStackTrace();
-			return Integer.MAX_VALUE;
 		}
-	}
-	public static int LiricaSelect( Statement st, Lirica lirica, String codSelect ) {
-		String sentSQL = "";
-		try {
-			int ret = Integer.MAX_VALUE;
-			sentSQL = "select * from lirica where Codigo Lirica='" + codSelect + "'";
-			ResultSet rs = st.executeQuery( sentSQL );
-			if (rs.next()) {
-				ret = rs.getInt( "Codigo Lirica" );
-			}
-			rs.close();
-			log( Level.INFO, "BD\t" + sentSQL, null );
-			return ret;
-		} catch (SQLException e) {
-			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
-			lastError = e;
-			e.printStackTrace();
-			return Integer.MAX_VALUE;
-		}
+		return cancion;
 	}
 
 	/** Modifica una analï¿½tica en la tabla abierta de BD, usando la sentencia UPDATE de SQL
@@ -248,7 +217,7 @@ public class BD {
 	public static boolean usuarioUpdate( Statement st, Usuario usuario, String codUpdate ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update usuario set nombre='" + usuario.getNombre() + "', contrasenya='"+ usuario.getContrasenya() + "', correo='" + usuario.getcorreo() + "' where codigo='" + codUpdate + "'";
+			sentSQL = "update usuario set nombre='" + usuario.getNombre() + "', contrasenya='"+ usuario.getContrasenya() + "', correo='" + usuario.getcorreo() + "' where codigoUsuario='" + codUpdate + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -266,25 +235,7 @@ public class BD {
 	public static boolean cancionUpdate( Statement st, Cancion cancion, String codUpdate ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update cancion set titulo='" + cancion.getTitulo() + "', autor='"+ cancion.getAutor() + "', fecha de subida='"+ cancion.getFechaSubida() + "', caratula='"+ cancion.getCaratula() + "', creador='" + cancion.getCreador() +"' where codCancion='" + codUpdate + "'";
-			int val = st.executeUpdate( sentSQL );
-			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
-			if (val!=1) {  // Se tiene que modificar 1 - error si no
-				log( Level.SEVERE, "Error en update de BD\t" + sentSQL, null );
-				return false;  
-			}
-			return true;
-		} catch (SQLException e) {
-			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
-			lastError = e;
-			e.printStackTrace();
-			return false;
-		}
-	}
-	public static boolean LiricaUpdate( Statement st, Lirica lirica, String codUpdate ) {
-		String sentSQL = "";
-		try {
-			sentSQL = "update cancion set letra='" + lirica.getLetra() +"' where codLirica='" + codUpdate + "'";
+			sentSQL = "update cancion set titulo='" + cancion.getTitulo() + "', autor='"+ cancion.getAutor() + "', fecha de subida='"+ cancion.getFechaSubida() + "', caratula='"+ cancion.getCaratula() + "', creador='" + cancion.getCreador() +"' where codigoCancion='" + codUpdate + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -308,7 +259,7 @@ public class BD {
 	public static boolean usuarioDelete( Statement st, Usuario usuario, String codDelete ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "delete from usuario where codigo='" + codDelete + "'";
+			sentSQL = "delete from usuario where codigoUsuario='" + codDelete + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
 			return (val==1);
@@ -323,21 +274,7 @@ public class BD {
 	public static boolean cancionDelete( Statement st, Cancion cancion, String codDelete ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "delete from cancion where codigo='" + codDelete + "'";
-			int val = st.executeUpdate( sentSQL );
-			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
-			return (val==1);
-		} catch (SQLException e) {
-			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
-			lastError = e;
-			e.printStackTrace();
-			return false;
-		}
-	}
-	public static boolean liricaDelete( Statement st, Lirica lirica, String codDelete ) {
-		String sentSQL = "";
-		try {
-			sentSQL = "delete from lirica where codigo='" + codDelete + "'";
+			sentSQL = "delete from cancion where codigoCancion='" + codDelete + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
 			return (val==1);

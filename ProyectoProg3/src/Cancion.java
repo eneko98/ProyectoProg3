@@ -7,6 +7,7 @@ public class Cancion {
 	private String fechaSubida;
 	private Image caratula;
 	private Usuario creador;
+	private String lirica;
 	
 	
 	public Cancion(String titulo, String autor, String fechaSubida, Image caratula, Usuario creador) {
@@ -22,6 +23,14 @@ public class Cancion {
 		this.fechaSubida = "";
 		this.caratula = caratula;
 		this.creador = creador;
+	}
+	
+	public Cancion(String titulo, String autor, String fechaSubida, Usuario creador, String lirica) {
+		this.titulo = titulo;
+		this.autor = autor;
+		this.fechaSubida = fechaSubida;
+		this.creador = creador;
+		this.lirica = lirica;
 	}
 
 	public String getTitulo() {
@@ -63,6 +72,14 @@ public class Cancion {
 	public void setCreador(Usuario creador) {
 		this.creador = creador;
 	}
+	
+	public String getLirica() {
+		return lirica;
+	}
+	
+	public void setLirica(String lirica) {
+		this.lirica = lirica;
+	}
 
 	
 	
@@ -71,21 +88,7 @@ public class Cancion {
 		return "Cancion [titulo= " + titulo + ", autor= " + autor + ", fechaSubida= " + fechaSubida + ", caratula= "
 				+ caratula + ", creador= " + creador + "]";
 	}
-	public void reproducir() {
-		
-	}
-	
-	public void pausar() {
-		
-	}
-	
-	public void detener() {
-		
-	}
-	
-	
-	
-	
+
 	
 
 }

@@ -1,9 +1,13 @@
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -11,12 +15,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+import javazoom.jlgui.basicplayer.BasicController;
+import javazoom.jlgui.basicplayer.BasicPlayer;
+import javazoom.jlgui.basicplayer.BasicPlayerException;
+
 
 
 public class VentanaReproductor extends JFrame {
 	
 	String titulo = "Ventana Reproductor";
 	Dimension dimension = new Dimension(900, 900);
+	URL miUrl=null;
+	AudioClip cancionElegida;
 	
 	
 	public VentanaReproductor(String cancion) {		
@@ -94,6 +104,13 @@ public class VentanaReproductor extends JFrame {
 			botonPause.setIcon(new ImageIcon(VentanaReproductor.class.getResource("/imagenes/Pause.png")));
 			botonPause.setBounds(0, 0, 63, 56);
 			botonPause.setFocusPainted(false);
+			botonPause.addActionListener(new ActionListener() {				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					cancionElegida.stop();
+				}
+			});
 			panel.add(botonPause);
 			
 			JButton botonPlay = new JButton("");
@@ -104,8 +121,9 @@ public class VentanaReproductor extends JFrame {
 			botonPlay.addActionListener(new ActionListener() {
 				
 				@Override
-				public void actionPerformed(ActionEvent e) {
-				
+				public void actionPerformed(ActionEvent a) {
+					cancionElegida = Applet.newAudioClip(this.getClass().getResource(cancion));
+					cancionElegida.play();
 				}
 			});
 			panel.add(botonPlay);
@@ -123,7 +141,7 @@ public class VentanaReproductor extends JFrame {
 		}
 
 	public static void main(String[] args) {
-		String cancion = "C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/3º-Simestre 1/Programacion/Proyecto Prog3/EminemTheRinger.mp3";
+		String cancion = "/cancion/EminemTheRinger.wav";
 		VentanaReproductor vr = new VentanaReproductor(cancion);
 		vr.setVisible(true);
 		

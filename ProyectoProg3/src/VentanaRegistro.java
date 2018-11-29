@@ -4,15 +4,20 @@ import javax.swing.JTextField;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.event.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.awt.*;
 
 import javax.swing.border.LineBorder;
 import javax.swing.JPasswordField;
 
 public class VentanaRegistro extends JFrame {
-	private JTextField TFUsuario;
-	private JTextField textField_1;
-	private JPasswordField passwordField;
+	
+	private JTextField textUsuario;
+	private JTextField textCorreo;
+	private JPasswordField cuadroContrasenya;
 	String titulo = "Ventana Registro";
 	
 	public VentanaRegistro(){
@@ -63,10 +68,10 @@ public class VentanaRegistro extends JFrame {
 		lblUsuario.setBounds(12, 42, 56, 16);
 		panelRegistro.add(lblUsuario);
 		
-		TFUsuario = new JTextField();
-		TFUsuario.setBounds(12, 63, 100, 22);
-		panelRegistro.add(TFUsuario);
-		TFUsuario.setColumns(10);
+		textUsuario = new JTextField();
+		textUsuario.setBounds(12, 63, 100, 22);
+		panelRegistro.add(textUsuario);
+		textUsuario.setColumns(10);
 		
 		JLabel lblContrasea = new JLabel("Contraseña: ");
 		lblContrasea.setBounds(12, 98, 84, 16);
@@ -76,14 +81,15 @@ public class VentanaRegistro extends JFrame {
 		lblCorreoElectronico.setBounds(12, 155, 131, 16);
 		panelRegistro.add(lblCorreoElectronico);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(12, 176, 131, 22);
-		panelRegistro.add(textField_1);
-		textField_1.setColumns(10);
+		textCorreo = new JTextField();
+		textCorreo.setBounds(12, 176, 131, 22);
+		panelRegistro.add(textCorreo);
+		textCorreo.setColumns(10);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(12, 120, 100, 22);
-		panelRegistro.add(passwordField);
+		
+		cuadroContrasenya = new JPasswordField();
+		cuadroContrasenya.setBounds(12, 120, 100, 22);
+		panelRegistro.add(cuadroContrasenya);
 		
 		botonAtras.addActionListener(new ActionListener() {
 			
@@ -100,12 +106,34 @@ public class VentanaRegistro extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				VentanaInicio v = new VentanaInicio();
-				v.setVisible(true);
-				VentanaPerfil vp = new VentanaPerfil();
-				vp.setVisible(true);
+				//Modo que pase sin comprobar nada
+//				setVisible(false);
+//				VentanaInicio v = new VentanaInicio();
+//				v.setVisible(true);
+//				VentanaPerfil vp = new VentanaPerfil();
+//				vp.setVisible(true);
 				
+				//Intento almacenar Usuario en BD
+				Connection connection = BD.initBD("UsuariosBD");
+				Statement statement = BD.usarCrearTablasBD(connection);
+
+				String usuarioNombre = textUsuario.getText();
+				String usuarioCorreo = textCorreo.getText();
+				String usuarioContrasenya = cuadroContrasenya.getSelectedText();
+
+
+
+				Usuario usuario = new Usuario(usuarioNombre, usuarioContrasenya, usuarioCorreo);
+
+
+				Usuario usuarioExistente = BD.usuarioSelect(statement, usuario);
+				if(usuarioExistente != null) {
+					System.err.println("Ya existe un usuario con el mismo nombre o correo.");
+				}else{
+				
+				BD.usuarioInsert(statement, usuario);	
+				}
+
 			}
 		});
 		
