@@ -110,8 +110,8 @@ public class VentanaRegistro extends JFrame {
 //				setVisible(false);
 //				VentanaInicio v = new VentanaInicio();
 //				v.setVisible(true);
-//				VentanaPerfil vp = new VentanaPerfil();
-//				vp.setVisible(true);
+
+				VentanaPerfil vp = new VentanaPerfil();
 				
 				//Intento almacenar Usuario en BD
 				Connection connection = BD.initBD("UsuariosBD");
@@ -119,7 +119,7 @@ public class VentanaRegistro extends JFrame {
 
 				String usuarioNombre = textUsuario.getText();
 				String usuarioCorreo = textCorreo.getText();
-				String usuarioContrasenya = cuadroContrasenya.getSelectedText();
+				String usuarioContrasenya = cuadroContrasenya.getText();
 
 
 
@@ -130,9 +130,10 @@ public class VentanaRegistro extends JFrame {
 				if(usuarioExistente != null) {
 					System.err.println("Ya existe un usuario con el mismo nombre o correo.");
 				}else{
-				
-				BD.usuarioInsert(statement, usuario);	
+					BD.usuarioInsert(statement, usuario);
+					vp.setVisible(true);
 				}
+				
 
 			}
 		});
