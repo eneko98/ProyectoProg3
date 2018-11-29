@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-11-29T15:23:05</date>
+  <millis>1543501385701</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Conectada base de datos UsuariosBD</message>
+</record>
+<record>
+  <date>2018-11-29T15:23:06</date>
+  <millis>1543501386060</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-11-29T15:23:06</date>
+  <millis>1543501386068</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario where nombre='Daniel'</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-11-29T15:24:50</date>
+  <millis>1543501490987</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Conectada base de datos UsuariosBD</message>
+</record>
+<record>
+  <date>2018-11-29T15:24:50</date>
+  <millis>1543501490992</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-11-29T15:24:50</date>
+  <millis>1543501490994</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario where nombre='Dani'</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-11-29T15:26:43</date>
+  <millis>1543501603008</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Conectada base de datos UsuariosBD</message>
+</record>
+<record>
+  <date>2018-11-29T15:26:43</date>
+  <millis>1543501603013</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-11-29T15:26:43</date>
+  <millis>1543501603015</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario where nombre='Dani'</message>
+</record>
+<record>
+  <date>2018-11-29T15:26:43</date>
+  <millis>1543501603275</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD fila añadida 1 fila	insert into usuario values('Dani', 'null', 'asd')</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-11-29T15:27:38</date>
+  <millis>1543501658985</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Conectada base de datos UsuariosBD</message>
+</record>
+<record>
+  <date>2018-11-29T15:27:38</date>
+  <millis>1543501658990</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-11-29T15:27:38</date>
+  <millis>1543501658992</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario where nombre='asd'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-11-29T15:28:28</date>
+  <millis>1543501708183</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Conectada base de datos UsuariosBD</message>
+</record>
+<record>
+  <date>2018-11-29T15:28:28</date>
+  <millis>1543501708189</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-11-29T15:28:28</date>
+  <millis>1543501708191</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario where nombre='asd'</message>
+</record>
+<record>
+  <date>2018-11-29T15:28:28</date>
+  <millis>1543501708495</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD fila añadida 1 fila	insert into usuario values('asd', 'asd', 'asd')</message>
+</record>
+</log>
