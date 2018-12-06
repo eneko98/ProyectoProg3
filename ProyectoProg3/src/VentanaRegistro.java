@@ -3,14 +3,19 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import java.awt.event.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.awt.*;
+
 
 import javax.swing.border.LineBorder;
+
 import javax.swing.JPasswordField;
 
 public class VentanaRegistro extends JFrame {
@@ -110,22 +115,20 @@ public class VentanaRegistro extends JFrame {
 //				setVisible(false);
 //				VentanaInicio v = new VentanaInicio();
 //				v.setVisible(true);
-
-				VentanaPerfil vp = new VentanaPerfil();
-				
+		
 				//Intento almacenar Usuario en BD
 				Connection connection = BD.initBD("UsuariosBD");
 				Statement statement = BD.usarCrearTablasBD(connection);
 
 				String usuarioNombre = textUsuario.getText();
 				String usuarioCorreo = textCorreo.getText();
-				@SuppressWarnings("deprecation")
-				String usuarioContrasenya = cuadroContrasenya.getText();
-
-
-
+				String usuarioContrasenya = new String(cuadroContrasenya.getPassword());
+				
+				
+				
 				Usuario usuario = new Usuario(usuarioNombre, usuarioContrasenya, usuarioCorreo);
-
+				VentanaPerfil vp = new VentanaPerfil(usuario);
+				VentanaInicio vi = new VentanaInicio();
 
 				Usuario usuarioExistente = BD.usuarioSelect(statement, usuario);
 				if(usuarioExistente != null) {
@@ -133,16 +136,19 @@ public class VentanaRegistro extends JFrame {
 				}else{
 					BD.usuarioInsert(statement, usuario);
 					vp.setVisible(true);
+					vi.setVisible(true);
 				}
-				
+				dispose();
+				BD.cerrarBD(connection, statement);
 
 			}
 		});
 		
 	}
 	
-	public static void main(String[] args) {
-		VentanaRegistro vr = new VentanaRegistro();
-		vr.setVisible(true);
-	}
+	//Para utilizar por si misma
+//	public static void main(String[] args) {
+//		VentanaRegistro vr = new VentanaRegistro();
+//		vr.setVisible(true);
+//	}
 }

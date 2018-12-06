@@ -8,6 +8,7 @@ import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -21,9 +22,10 @@ public class VentanaPerfil extends JFrame {
 
 	String titulo = "Ventana Perfil";
 	Dimension dimension = new Dimension(900, 900);
+	private Usuario usuario;
 
-
-	public VentanaPerfil() {
+	public VentanaPerfil(Usuario usuario) {
+		this.usuario = usuario;
 		
 
 		setResizable(false);
@@ -69,7 +71,7 @@ public class VentanaPerfil extends JFrame {
 		panelNombre.add(jlNombre);
 		jlNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
-		JLabel jlNombreUsuario = new JLabel("Nombre Usuario");
+		JLabel jlNombreUsuario = new JLabel(usuario.getNombre());
 		jlNombreUsuario.setForeground(new Color(255, 255, 255));
 		jlNombreUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panelNombre.add(jlNombreUsuario);
@@ -85,7 +87,7 @@ public class VentanaPerfil extends JFrame {
 		jlEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panelEmail.add(jlEmail);
 		
-		JLabel jlEmailUsuario = new JLabel("Email Usuario");
+		JLabel jlEmailUsuario = new JLabel(usuario.getCorreo());
 		jlEmailUsuario.setForeground(new Color(255, 255, 255));
 		jlEmailUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panelEmail.add(jlEmailUsuario);
@@ -101,40 +103,14 @@ public class VentanaPerfil extends JFrame {
 		btnEditarPerfil.setBackground(new Color(72, 61, 139));
 		btnEditarPerfil.setBounds(64, 244, 128, 25);
 		getContentPane().add(btnEditarPerfil);
-		
-		botonImagen.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				
-				
-			}
-			
-			
-		});
 
 	}
 
-	public void buscarCaratula() {
-		File caratula = null;
-		JFileChooser f = new JFileChooser();
-		if(caratula != null) 
-			f.setCurrentDirectory(caratula);
-		 f.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		 int cod = f.showOpenDialog(this);
-		 if(cod == JFileChooser.APPROVE_OPTION) {
-			 File dir = f.getSelectedFile();
-			 
-		 }
-	}
 	
-	
-
-	public static void main(String[] args) {
-		VentanaPerfil vp = new VentanaPerfil();
-		vp.setVisible(true);
-
-	}
+// Usado para ver la pantalla por si misma
+//	public static void main(String[] args) {
+//		VentanaPerfil vp = new VentanaPerfil(Usuario usuario);
+//		vp.setVisible(true);
+//
+//	}
 }

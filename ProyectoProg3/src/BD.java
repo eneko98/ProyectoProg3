@@ -1,6 +1,11 @@
-
-import java.sql.*;
-import java.util.logging.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /** Clase de gestiï¿½n de base de datos del sistema de analiticas
  * @author andoni.eguiluz @ ingenieria.deusto.es
@@ -128,7 +133,7 @@ public class BD {
 	public static boolean usuarioInsert( Statement st, Usuario usuario) {
 		String sentSQL = "";	
 		try {
-			sentSQL = "insert into usuario values('" + secu(usuario.getNombre()) + "', '" + secu(usuario.getContrasenya()) + "', '"+ secu(usuario.getcorreo()) +  "')";
+			sentSQL = "insert into usuario values('" + secu(usuario.getNombre()) + "', '" + secu(usuario.getContrasenya()) + "', '"+ secu(usuario.getCorreo()) +  "')";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
@@ -196,7 +201,9 @@ public class BD {
 			sentSQL = "select * from cancion where titulo='" + cancion.getTitulo() + "'";
 			ResultSet rs = st.executeQuery( sentSQL );
 			if (rs.next()) {
-				//song = new Cancion(rs.getString("titulo"), rs.getString("autor"), rs.getString("fechaSubida") , rs.getString("creador"), rs.getString("lirica"));
+				Usuario creador = new Usuario(rs.getString("creador"));
+				Usuario usuario = usuarioSelect(st, creador);
+				song = new Cancion(rs.getString("titulo"), rs.getString("autor"), rs.getString("fechaSubida") , usuario, rs.getString("lirica"));
 			}
 			rs.close();
 			log( Level.INFO, "BD\t" + sentSQL, null );
@@ -214,10 +221,10 @@ public class BD {
 	 * @param contador	Contador a modificar de ese cï¿½digo
 	 * @return	true si la inserciï¿½n es correcta, false en caso contrario
 	 */
-	public static boolean usuarioUpdate( Statement st, Usuario usuario, String codUpdate ) {
+	public static boolean usuarioUpdate( Statement st, Usuario usuario) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update usuario set nombre='" + usuario.getNombre() + "', contrasenya='"+ usuario.getContrasenya() + "', correo='" + usuario.getcorreo() + "' where codigoUsuario='" + codUpdate + "'";
+			sentSQL = "update usuario set contrasenya='"+ usuario.getContrasenya() + "', correo='" + usuario.getCorreo() + "' where nombre='" + usuario.getNombre() + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -232,10 +239,10 @@ public class BD {
 			return false;
 		}
 	}
-	public static boolean cancionUpdate( Statement st, Cancion cancion, String codUpdate ) {
+	public static boolean cancionUpdate( Statement st, Cancion cancion ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update cancion set titulo='" + cancion.getTitulo() + "', autor='"+ cancion.getAutor() + "', fecha de subida='"+ cancion.getFechaSubida() + "', caratula='"+ cancion.getCaratula() + "', creador='" + cancion.getCreador() +"' where codigoCancion='" + codUpdate + "'";
+			sentSQL = "update cancion set autor='"+ cancion.getAutor() + "', fecha de subida='"+ cancion.getFechaSubida() + "', caratula='"+ cancion.getCaratula() + "', creador='" + cancion.getCreador() +"' where titulo='" + cancion.getTitulo() + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -256,10 +263,10 @@ public class BD {
 	 * @param codigo	Cï¿½digo de analï¿½tica a borrar de la base de datos
 	 * @return	true si el borrado es correcto, false en caso contrario
 	 */
-	public static boolean usuarioDelete( Statement st, Usuario usuario, String codDelete ) {
+	public static boolean usuarioDelete( Statement st, Usuario usuario ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "delete from usuario where codigoUsuario='" + codDelete + "'";
+			sentSQL = "delete from usuario where nombre='" + usuario.getNombre() + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
 			return (val==1);
@@ -271,10 +278,10 @@ public class BD {
 		}
 	}
 	
-	public static boolean cancionDelete( Statement st, Cancion cancion, String codDelete ) {
+	public static boolean cancionDelete( Statement st, Cancion cancion) {
 		String sentSQL = "";
 		try {
-			sentSQL = "delete from cancion where codigoCancion='" + codDelete + "'";
+			sentSQL = "delete from cancion where titulo='" + cancion.getTitulo() + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
 			return (val==1);

@@ -6,13 +6,15 @@ import java.awt.GridLayout;
 import javax.swing.*;
 import java.awt.FlowLayout;
 import javax.swing.border.LineBorder;
+
+
 import java.awt.Font;
 import java.awt.Panel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Label;
-import javax.sql.*;
+
 
 
 public class VentanaInicio extends JFrame {

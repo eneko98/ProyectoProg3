@@ -5,21 +5,20 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
+
+
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 
 public class VentanaLoggin extends JFrame{
 
 
-	private JTextField textField;
-	private JPasswordField passwordField;
-	
-
 	public VentanaLoggin() {
-
-	
+					
 		setBounds(100, 100, 347, 179);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
@@ -27,7 +26,6 @@ public class VentanaLoggin extends JFrame{
 
 		
 		String titulo = "Ventana Login";
-		Dimension dimension = new Dimension(400, 200);
 		setTitle(titulo);
 		setResizable(false);
 		setSize(325, 181);
@@ -41,27 +39,50 @@ public class VentanaLoggin extends JFrame{
 		lblNombre.setBounds(29, 13, 94, 30);
 		getContentPane().add(lblNombre);
 		
-		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
+		JLabel lblContrasea = new JLabel("Contraseña");
 		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblContrasea.setBounds(29, 56, 94, 24);
 		getContentPane().add(lblContrasea);
 		
-		JTextField textField = new JTextField();
-		textField.setBounds(156, 18, 116, 22);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		JTextField textNombreUsuario = new JTextField();
+		textNombreUsuario.setBounds(156, 18, 116, 22);
+		getContentPane().add(textNombreUsuario);
+		textNombreUsuario.setColumns(10);
 		
-		JPasswordField passwordField = new JPasswordField();
-		passwordField.setBounds(156, 58, 116, 24);
-		getContentPane().add(passwordField);
+		JPasswordField passwordUsuario = new JPasswordField();
+		passwordUsuario.setBounds(156, 58, 116, 24);
+		getContentPane().add(passwordUsuario);
 		
 
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				VentanaPerfil vp = new VentanaPerfil();
-				vp.setVisible(true);
+				
+				Connection connection = BD.initBD("UsuariosBD");
+				Statement statement = BD.usarCrearTablasBD(connection);
+				
+				String nombreUsuario = textNombreUsuario.getText();
+				String contraseñaUsuario = new String(passwordUsuario.getPassword());
+				
+				Usuario usuarioLogin = new Usuario(nombreUsuario, contraseñaUsuario);
+				
+				
+				Usuario usuarioExistente = BD.usuarioSelect(statement, usuarioLogin);
+				VentanaPerfil vp = new VentanaPerfil(usuarioExistente);
+				
+				if(usuarioExistente == null) {
+					System.err.println("No existe este usuario.");
+				}else{
+					vp.setVisible(true);
+					dispose();
+				}
+				BD.cerrarBD(connection, statement);
+				
+				
+				//Usado para ver pantalla perfil sin darle datos
+//				setVisible(false);
+//				VentanaPerfil vp = new VentanaPerfil();
+//				vp.setVisible(true);
 			}
 		});
 		btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -69,12 +90,6 @@ public class VentanaLoggin extends JFrame{
 		btnAceptar.setFocusPainted(false);
 		getContentPane().add(btnAceptar);
 	
-		JButton botonAceptar = new JButton("Aceptar");
-		botonAceptar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		botonAceptar.setBounds(106, 93, 97, 25);
-		botonAceptar.setFocusPainted(false);
-		getContentPane().add(botonAceptar);
-		
 
 	}	
 

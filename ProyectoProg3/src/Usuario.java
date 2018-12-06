@@ -9,8 +9,16 @@ public class Usuario {
 	public Usuario(String nombre, String contrasenya, String correo) {
 		this.nombre = nombre;
 		this.contrasenya = contrasenya;
-		this.correo = correo;
-		
+		this.correo = correo;	
+	}
+	
+	public Usuario(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public Usuario(String nombre, String contrasenya) {
+		this.nombre = nombre;
+		this.contrasenya = contrasenya;
 	}
 
 	public String getNombre() {
@@ -29,16 +37,16 @@ public class Usuario {
 		this.contrasenya = contrasenya;
 	}
 	
-	public String getcorreo() {
+	public String getCorreo() {
 		return correo;
 	}
 
-	public void setcorreo(String correo) {
+	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
 	
 	
-
+	
 	@Override
 	public String toString() {
 		return "Usuario [Nombre: " + nombre + ", Contraseña: " + contrasenya + "Correo: " + correo + "Codigo Usuario: " + "]";
