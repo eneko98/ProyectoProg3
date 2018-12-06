@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="External/mysql-connector-java-8.0.13.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Diazl/Desktop/Dani/Universidad de Deusto/Programación/Programacion 3/Programa Vlcj/sqlite-jdbc-3.21.0.jar"/>
-	<classpathentry kind="lib" path="External/slf4j.jar"/>
-	<classpathentry kind="lib" path="External/vlcj-3.10.1.jar"/>
-	<classpathentry kind="lib" path="External/basicplayer3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eneko/Desktop/vlcj-3.10.1/sqlite-jdbc-3.23.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eneko/Desktop/vlcj-3.10.1/vlcj-3.10.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

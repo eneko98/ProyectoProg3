@@ -119,6 +119,7 @@ public class VentanaRegistro extends JFrame {
 
 				String usuarioNombre = textUsuario.getText();
 				String usuarioCorreo = textCorreo.getText();
+				@SuppressWarnings("deprecation")
 				String usuarioContrasenya = cuadroContrasenya.getText();
 
 

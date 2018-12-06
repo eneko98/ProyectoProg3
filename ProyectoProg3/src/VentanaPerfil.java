@@ -10,7 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
+
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.awt.event.ActionEvent;
 
 public class VentanaPerfil extends JFrame {
@@ -98,9 +101,35 @@ public class VentanaPerfil extends JFrame {
 		btnEditarPerfil.setBackground(new Color(72, 61, 139));
 		btnEditarPerfil.setBounds(64, 244, 128, 25);
 		getContentPane().add(btnEditarPerfil);
+		
+		botonImagen.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+				
+			}
+			
+			
+		});
 
 	}
 
+	public void buscarCaratula() {
+		File caratula = null;
+		JFileChooser f = new JFileChooser();
+		if(caratula != null) 
+			f.setCurrentDirectory(caratula);
+		 f.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		 int cod = f.showOpenDialog(this);
+		 if(cod == JFileChooser.APPROVE_OPTION) {
+			 File dir = f.getSelectedFile();
+			 
+		 }
+	}
+	
 	
 
 	public static void main(String[] args) {

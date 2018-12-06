@@ -1,5 +1,7 @@
 import java.applet.Applet;
 import java.applet.AudioClip;
+import java.awt.BorderLayout;
+import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -15,9 +17,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
-import javazoom.jlgui.basicplayer.BasicController;
-import javazoom.jlgui.basicplayer.BasicPlayer;
-import javazoom.jlgui.basicplayer.BasicPlayerException;
+import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
+import uk.co.caprica.vlcj.player.MediaPlayerFactory;
+import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
+import uk.co.caprica.vlcj.runtime.RuntimeUtil;
+
+import com.sun.glass.utils.NativeLibLoader;
+import com.sun.jna.*;
 
 
 
@@ -27,6 +33,7 @@ public class VentanaReproductor extends JFrame {
 	Dimension dimension = new Dimension(900, 900);
 	URL miUrl=null;
 	AudioClip cancionElegida;
+	Canvas c;
 	
 	
 	public VentanaReproductor(String cancion) {		
@@ -37,11 +44,15 @@ public class VentanaReproductor extends JFrame {
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			getContentPane().setLayout(null);
 			
-			JPanel panelImagenCaratula = new JPanel();
-			panelImagenCaratula.setBackground(Color.WHITE);
-			panelImagenCaratula.setBounds(12, 13, 283, 191);
+			c = new Canvas();
+			c.setBackground(Color.BLACK);
 			
-			getContentPane().add(panelImagenCaratula);
+			JPanel panelVideo = new JPanel();
+			panelVideo.setLayout(new BorderLayout());
+			panelVideo.setBounds(12, 13, 283, 191);
+			panelVideo.add(c);
+		
+			getContentPane().add(panelVideo);
 					
 			
 			JTextPane textoLirica = new JTextPane();
@@ -122,8 +133,8 @@ public class VentanaReproductor extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent a) {
-					cancionElegida = Applet.newAudioClip(this.getClass().getResource(cancion));
-					cancionElegida.play();
+					//cancionElegida = Applet.newAudioClip(this.getClass().getResource(cancion));
+					//cancionElegida.play();
 				}
 			});
 			panel.add(botonPlay);
@@ -138,10 +149,23 @@ public class VentanaReproductor extends JFrame {
 			JPanel barraReproductor = new JPanel();
 			barraReproductor.setBounds(12, 208, 283, 14);
 			getContentPane().add(barraReproductor);
+			
+			EmbeddedMediaPlayerComponent Eemp = new EmbeddedMediaPlayerComponent();
+			EmbeddedMediaPlayer emp = Eemp.getMediaPlayer();
+			emp.setEnableMouseInputHandling(false);
+			emp.setEnableKeyInputHandling(false);
+			
+			JFrame f = new JFrame();
+			f.add(Eemp);
+			f.setVisible(true);
+			emp.prepareMedia(cancion);
+			emp.play();
 		}
 
 	public static void main(String[] args) {
-		String cancion = "/cancion/EminemTheRinger.wav";
+		boolean f = new uk.co.caprica.vlcj.discovery.NativeDiscovery().discover();
+		System.out.println(f);
+		String cancion = "src/cancion/EminemTheRinger.wav";
 		VentanaReproductor vr = new VentanaReproductor(cancion);
 		vr.setVisible(true);
 		
