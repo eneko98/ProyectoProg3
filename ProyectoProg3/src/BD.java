@@ -15,7 +15,7 @@ public class BD {
 	private static Exception lastError = null;  // Informaciï¿½n de ï¿½ltimo error SQL ocurrido
 	// TODO CAMBIAR CONSTANTES
 	private static final String NOMBRETABLAUSUARIO = "Usuario";
-	private static final String COLUMNAS_TABLA_USUARIO = " (nombre string PRIMARY KEY, contraseña string, correo string)";
+	private static final String COLUMNAS_TABLA_USUARIO = " (correo string PRIMARY KEY, contraseña string, nombre string)";
 	private static final String NOMBRETABLACANCION = "Cancion";
 	private static final String COLUMNAS_TABLA_CANCION = " (titulo string PRIMARY KEY, autor string, fechaSubida string, creador Usuario , lirica Lirica)";
 
@@ -133,7 +133,7 @@ public class BD {
 	public static boolean usuarioInsert( Statement st, Usuario usuario) {
 		String sentSQL = "";	
 		try {
-			sentSQL = "insert into usuario values('" + secu(usuario.getNombre()) + "', '" + secu(usuario.getContrasenya()) + "', '"+ secu(usuario.getCorreo()) +  "')";
+			sentSQL = "insert into usuario values('" + secu(usuario.getCorreo()) + "', '" + secu(usuario.getContrasenya()) + "', '"+ secu(usuario.getNombre()) +  "')";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
@@ -176,11 +176,11 @@ public class BD {
 		String sentSQL = "";
 		Usuario user = null;
 		try {
-			sentSQL = "select * from usuario where nombre='"  + usuario.getNombre() + "'";
+			sentSQL = "select * from usuario where correo='"  + usuario.getCorreo() + "'";
 			ResultSet rs = st.executeQuery( sentSQL );
 			
 			if (rs.next()) {
-				user = new Usuario(rs.getString("nombre"), rs.getString("contraseña"), rs.getString("correo"));
+				user = new Usuario(rs.getString("correo"), rs.getString("contraseña"), rs.getString("nombre"));
 			}
 			rs.close();
 			log( Level.INFO, "BD\t" + sentSQL, null );
@@ -224,7 +224,7 @@ public class BD {
 	public static boolean usuarioUpdate( Statement st, Usuario usuario) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update usuario set contrasenya='"+ usuario.getContrasenya() + "', correo='" + usuario.getCorreo() + "' where nombre='" + usuario.getNombre() + "'";
+			sentSQL = "update usuario set contrasenya='"+ usuario.getContrasenya() + "', nombre='" + usuario.getCorreo() + "' where correo='" + usuario.getNombre() + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no

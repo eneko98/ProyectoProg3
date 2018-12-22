@@ -14,6 +14,7 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
@@ -156,6 +157,7 @@ public class VentanaReproductor extends JFrame {
 			emp.setEnableKeyInputHandling(false);
 			
 			JFrame f = new JFrame();
+			f.setJMenuBar(null);
 			f.add(Eemp);
 			f.setVisible(true);
 			emp.prepareMedia(cancion);

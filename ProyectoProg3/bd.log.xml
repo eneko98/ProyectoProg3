@@ -202,3 +202,139 @@
   <message>BD fila añadida 1 fila	insert into usuario values('asd', 'asd', 'asd')</message>
 </record>
 </log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-12-06T10:59:02</date>
+  <millis>1544090342602</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Conectada base de datos UsuariosBD</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:02</date>
+  <millis>1544090342637</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:02</date>
+  <millis>1544090342640</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario where nombre=''</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:03</date>
+  <millis>1544090343550</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Conectada base de datos UsuariosBD</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:03</date>
+  <millis>1544090343552</millis>
+  <sequence>4</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:03</date>
+  <millis>1544090343553</millis>
+  <sequence>5</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario where nombre=''</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:03</date>
+  <millis>1544090343940</millis>
+  <sequence>6</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Conectada base de datos UsuariosBD</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:03</date>
+  <millis>1544090343942</millis>
+  <sequence>7</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:03</date>
+  <millis>1544090343942</millis>
+  <sequence>8</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario where nombre=''</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:04</date>
+  <millis>1544090344090</millis>
+  <sequence>9</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Conectada base de datos UsuariosBD</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:04</date>
+  <millis>1544090344092</millis>
+  <sequence>10</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-06T10:59:04</date>
+  <millis>1544090344093</millis>
+  <sequence>11</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario where nombre=''</message>
+</record>
+</log>
