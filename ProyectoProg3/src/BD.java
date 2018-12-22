@@ -17,7 +17,7 @@ public class BD {
 	private static final String NOMBRETABLAUSUARIO = "Usuario";
 	private static final String COLUMNAS_TABLA_USUARIO = " (correo string PRIMARY KEY, contraseña string, nombre string)";
 	private static final String NOMBRETABLACANCION = "Cancion";
-	private static final String COLUMNAS_TABLA_CANCION = " (titulo string PRIMARY KEY, autor string, fechaSubida string, creador Usuario , lirica Lirica)";
+	private static final String COLUMNAS_TABLA_CANCION = " (titulo string PRIMARY KEY, autor string, fechaSubida string, creador Usuario , lirica string, url string)";
 
 	/** Inicializa una BD SQLITE y devuelve una conexiï¿½n con ella
 	 * @param nombreBD	Nombre de fichero de la base de datos
@@ -152,7 +152,7 @@ public class BD {
 	public static boolean cancionInsert( Statement st, Cancion cancion) {
 		String sentSQL = "";	
 		try {
-			sentSQL = "insert into cancion values('" + secu(cancion.getTitulo()) + "', '" + secu(cancion.getAutor()) + "', '"+ secu(cancion.getFechaSubida()) + "', '"+ cancion.getCaratula()+ "', '" + cancion.getCreador() + "')";
+			sentSQL = "insert into cancion values('" + secu(cancion.getTitulo()) + "', '" + secu(cancion.getAutor()) + "', '"+ secu(cancion.getFechaSubida()) + "', '" + cancion.getCreador() + "', '"+ secu(cancion.getLirica()) +"', '" + secu(cancion.getUrl()) + "')";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD fila añadida " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que aï¿½adir 1 - error si no
@@ -203,7 +203,7 @@ public class BD {
 			if (rs.next()) {
 				Usuario creador = new Usuario(rs.getString("creador"));
 				Usuario usuario = usuarioSelect(st, creador);
-				song = new Cancion(rs.getString("titulo"), rs.getString("autor"), rs.getString("fechaSubida") , usuario, rs.getString("lirica"));
+				song = new Cancion(rs.getString("titulo"), rs.getString("autor"), rs.getString("fechaSubida") , usuario, rs.getString("lirica") , rs.getString("url"));
 			}
 			rs.close();
 			log( Level.INFO, "BD\t" + sentSQL, null );
@@ -242,7 +242,7 @@ public class BD {
 	public static boolean cancionUpdate( Statement st, Cancion cancion ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "update cancion set autor='"+ cancion.getAutor() + "', fecha de subida='"+ cancion.getFechaSubida() + "', caratula='"+ cancion.getCaratula() + "', creador='" + cancion.getCreador() +"' where titulo='" + cancion.getTitulo() + "'";
+			sentSQL = "update cancion set autor='"+ cancion.getAutor() + "', fecha de subida='"+ cancion.getFechaSubida() + "', creador='" + cancion.getCreador() +"', lirica='"+ cancion.getLirica() +"' where titulo='" + cancion.getTitulo() + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -266,7 +266,7 @@ public class BD {
 	public static boolean usuarioDelete( Statement st, Usuario usuario ) {
 		String sentSQL = "";
 		try {
-			sentSQL = "delete from usuario where nombre='" + usuario.getNombre() + "'";
+			sentSQL = "delete from usuario where correo='" + usuario.getCorreo() + "'";
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD borrada " + val + " fila\t" + sentSQL, null );
 			return (val==1);
