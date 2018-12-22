@@ -1,3 +1,4 @@
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -97,7 +98,7 @@ public class VentanaInicio extends JFrame {
 		
 		JPanel panelBuscador = new JPanel();
 		panelBuscador.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panelBuscador.setBounds(586, 89, 236, 39);
+		panelBuscador.setBounds(586, 110, 236, 39);
 		panelPrincipal.add(panelBuscador);
 		
 		JLabel JlBuscador = new JLabel("Buscar: ");
@@ -108,6 +109,38 @@ public class VentanaInicio extends JFrame {
 		panelBuscador.add(TfBuscador);
 		TfBuscador.setColumns(10);
 		
+		JButton botonSubir = new JButton("Subir Cancion");
+		botonSubir.setBackground(Color.WHITE);
+		botonSubir.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		botonSubir.setBounds(748, 52, 134, 27);
+		panelPrincipal.add(botonSubir);
+		
+		JButton botonReproductor = new JButton("Reproductor");
+		botonReproductor.setBackground(Color.WHITE);
+		botonReproductor.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		botonReproductor.setBounds(211, 614, 134, 25);
+		panelPrincipal.add(botonReproductor);
+		
+		botonReproductor.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				boolean f = new uk.co.caprica.vlcj.discovery.NativeDiscovery().discover();
+				System.out.println(f);
+				VentanaReproductor vR = new VentanaReproductor("src/cancion/EminemTheRinger.wav");
+				vR.setVisible(true);
+				
+			}
+		});
+		botonSubir.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				BDArchivos buscador = new BDArchivos();
+				buscador.escogerArchivo();
+			}
+		});
 		botonRegistrarse.addActionListener(new ActionListener() {
 			
 			@Override

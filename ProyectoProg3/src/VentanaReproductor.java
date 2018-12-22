@@ -1,3 +1,4 @@
+
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.BorderLayout;
@@ -7,6 +8,9 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,7 +18,6 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
@@ -24,7 +27,7 @@ import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 import com.sun.glass.utils.NativeLibLoader;
-import com.sun.jna.*;
+
 
 
 
@@ -34,8 +37,9 @@ public class VentanaReproductor extends JFrame {
 	Dimension dimension = new Dimension(900, 900);
 	URL miUrl=null;
 	AudioClip cancionElegida;
-	Canvas c;
-	
+	EmbeddedMediaPlayer emp;
+	EmbeddedMediaPlayerComponent Eemp;
+	JPanel panelVideo;
 	
 	public VentanaReproductor(String cancion) {		
 		
@@ -45,16 +49,19 @@ public class VentanaReproductor extends JFrame {
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			getContentPane().setLayout(null);
 			
-			c = new Canvas();
-			c.setBackground(Color.BLACK);
 			
-			JPanel panelVideo = new JPanel();
+			
+			Eemp = new EmbeddedMediaPlayerComponent();
+			emp = Eemp.getMediaPlayer();
+			emp.setEnableMouseInputHandling(false);
+			emp.setEnableKeyInputHandling(false);
+			emp.prepareMedia(cancion);
+			
+			panelVideo = new JPanel();
 			panelVideo.setLayout(new BorderLayout());
 			panelVideo.setBounds(12, 13, 283, 191);
-			panelVideo.add(c);
-		
+			panelVideo.add(Eemp);
 			getContentPane().add(panelVideo);
-					
 			
 			JTextPane textoLirica = new JTextPane();
 			textoLirica.setEditable(false);
@@ -119,8 +126,7 @@ public class VentanaReproductor extends JFrame {
 			botonPause.addActionListener(new ActionListener() {				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
-					cancionElegida.stop();
+					emp.pause();
 				}
 			});
 			panel.add(botonPause);
@@ -134,8 +140,7 @@ public class VentanaReproductor extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent a) {
-					//cancionElegida = Applet.newAudioClip(this.getClass().getResource(cancion));
-					//cancionElegida.play();
+					emp.play();
 				}
 			});
 			panel.add(botonPlay);
@@ -151,25 +156,32 @@ public class VentanaReproductor extends JFrame {
 			barraReproductor.setBounds(12, 208, 283, 14);
 			getContentPane().add(barraReproductor);
 			
-			EmbeddedMediaPlayerComponent Eemp = new EmbeddedMediaPlayerComponent();
-			EmbeddedMediaPlayer emp = Eemp.getMediaPlayer();
-			emp.setEnableMouseInputHandling(false);
-			emp.setEnableKeyInputHandling(false);
+			addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowActivated(WindowEvent e) {
+					// TODO Auto-generated method stub
+					super.windowActivated(e);
+					emp.play();
+				}
+			});
+					
+				
 			
-			JFrame f = new JFrame();
-			f.setJMenuBar(null);
-			f.add(Eemp);
-			f.setVisible(true);
-			emp.prepareMedia(cancion);
-			emp.play();
+				
+				
+				
+				
+			
+			
+			
 		}
 
-	public static void main(String[] args) {
-		boolean f = new uk.co.caprica.vlcj.discovery.NativeDiscovery().discover();
-		System.out.println(f);
-		String cancion = "src/cancion/EminemTheRinger.wav";
-		VentanaReproductor vr = new VentanaReproductor(cancion);
-		vr.setVisible(true);
-		
-	}
+//	public static void main(String[] args) {
+//		
+//		
+//		String cancion = "src/cancion/EminemTheRinger.wav";
+//		VentanaReproductor vr = new VentanaReproductor(cancion);
+//		vr.setVisible(true);
+//		
+//	}
 }
