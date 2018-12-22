@@ -127,7 +127,7 @@ public class VentanaInicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				boolean f = new uk.co.caprica.vlcj.discovery.NativeDiscovery().discover();
 				System.out.println(f);
-				VentanaReproductor vR = new VentanaReproductor("src/cancion/EminemTheRinger.wav");
+				VentanaReproductor vR = new VentanaReproductor("src/Media/EminemTheRinger.wav");
 				vR.setVisible(true);
 				
 			}
@@ -136,9 +136,9 @@ public class VentanaInicio extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				datosCancion dC = new datosCancion();
+				dC.setVisible(true);
 				
-				BDArchivos buscador = new BDArchivos();
-				buscador.escogerArchivo();
 			}
 		});
 		botonRegistrarse.addActionListener(new ActionListener() {
