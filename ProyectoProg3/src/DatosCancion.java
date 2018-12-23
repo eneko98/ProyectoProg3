@@ -10,13 +10,13 @@ import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JTextField;
 
-public class datosCancion extends JFrame {
+public class DatosCancion extends JFrame {
 	private JTextField escTitulo;
 	private JTextField escAutor;
 	private JTextField escFS;
 	String titulo = "Datos";
 	Dimension dimension = new Dimension(344, 432);
-	public datosCancion() {
+	public DatosCancion() {
 		setTitle(titulo);
 		setResizable(false);
 		setSize(dimension.width, dimension.height);

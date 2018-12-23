@@ -136,7 +136,7 @@ public class VentanaInicio extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				datosCancion dC = new datosCancion();
+				DatosCancion dC = new DatosCancion();
 				dC.setVisible(true);
 				
 			}
