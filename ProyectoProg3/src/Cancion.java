@@ -6,17 +6,15 @@ public class Cancion {
 	private String autor;
 	private String fechaSubida;
 	private Image caratula;
-	private Usuario creador;
 	private String lirica;
 	private String url;
 	
 	
-	public Cancion(String titulo, String autor, String fechaSubida, Image caratula, Usuario creador, String url) {
+	public Cancion(String titulo, String autor, String fechaSubida, Image caratula, String url) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.fechaSubida = fechaSubida;
 		this.caratula = caratula;
-		this.creador = creador;
 		this.url = url;
 	}
 	
@@ -25,15 +23,13 @@ public class Cancion {
 		this.autor = "";
 		this.fechaSubida = "";
 		this.caratula = caratula;
-		this.creador = creador;
 		this.url = "";
 	}
 	
-	public Cancion(String titulo, String autor, String fechaSubida, Usuario creador, String lirica, String url) {
+	public Cancion(String titulo, String autor, String fechaSubida, String lirica, String url) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.fechaSubida = fechaSubida;
-		this.creador = creador;
 		this.lirica = lirica;
 		this.url = url;
 	}
@@ -69,14 +65,6 @@ public class Cancion {
 	public void setCaratula(Image caratula) {
 		this.caratula = caratula;
 	}
-
-	public Usuario getCreador() {
-		return creador;
-	}
-
-	public void setCreador(Usuario creador) {
-		this.creador = creador;
-	}
 	
 	public String getLirica() {
 		return lirica;
@@ -97,6 +85,7 @@ public class Cancion {
 	@Override
 	public String toString() {
 		return "Cancion [titulo=" + titulo + ", autor=" + autor + ", fechaSubida=" + fechaSubida + ", caratula="
-				+ caratula + ", creador=" + creador + ", lirica=" + lirica + ", url=" + url + "]";
+				+ caratula + ", lirica=" + lirica + ", url=" + url + "]";
 	}
+
 }
