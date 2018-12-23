@@ -13,7 +13,7 @@ public class BDArchivos {
 	static JFileChooser fc;
 	
 	
-	public static void escogerArchivo() {
+	public static String escogerArchivo() {
 		fc = new JFileChooser();
 		fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		
@@ -25,17 +25,18 @@ public class BDArchivos {
 			File fichero = fc.getSelectedFile();
 			String nuevaURL = "src/Media/" + fichero.getName();
 			File newFile = new File(nuevaURL);
+			
 			try {
 				copyFile(fichero, newFile );
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			BD.usarCrearTablasBD(connection);
-//			BD.cancionInsert(statement, cancion)
+			return nuevaURL;
 			
-		
-			
+		} else {
+			return null;
 		}
+		
 	}
 
 	public static void copyFile(File sourceFile, File destFile) throws IOException {

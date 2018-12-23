@@ -2,19 +2,19 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2018-11-29T15:23:05</date>
-  <millis>1543501385701</millis>
+  <date>2018-12-23T17:04:12</date>
+  <millis>1545581052822</millis>
   <sequence>0</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
   <thread>14</thread>
-  <message>Conectada base de datos UsuariosBD</message>
+  <message>Conectada base de datos FicherosBD</message>
 </record>
 <record>
-  <date>2018-11-29T15:23:06</date>
-  <millis>1543501386060</millis>
+  <date>2018-12-23T17:04:12</date>
+  <millis>1545581052844</millis>
   <sequence>1</sequence>
   <logger>BD</logger>
   <level>INFO</level>
@@ -24,317 +24,362 @@
   <message>Creada base de datos</message>
 </record>
 <record>
-  <date>2018-11-29T15:23:06</date>
-  <millis>1543501386068</millis>
+  <date>2018-12-23T17:04:16</date>
+  <millis>1545581056026</millis>
   <sequence>2</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
   <thread>14</thread>
-  <message>BD	select * from usuario where nombre='Daniel'</message>
-</record>
-<?xml version="1.0" encoding="windows-1252" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-<record>
-  <date>2018-11-29T15:24:50</date>
-  <millis>1543501490987</millis>
-  <sequence>0</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Conectada base de datos UsuariosBD</message>
+  <message>Conectada base de datos CancionesBD</message>
 </record>
 <record>
-  <date>2018-11-29T15:24:50</date>
-  <millis>1543501490992</millis>
-  <sequence>1</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Creada base de datos</message>
-</record>
-<record>
-  <date>2018-11-29T15:24:50</date>
-  <millis>1543501490994</millis>
-  <sequence>2</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>BD	select * from usuario where nombre='Dani'</message>
-</record>
-<?xml version="1.0" encoding="windows-1252" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-<record>
-  <date>2018-11-29T15:26:43</date>
-  <millis>1543501603008</millis>
-  <sequence>0</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Conectada base de datos UsuariosBD</message>
-</record>
-<record>
-  <date>2018-11-29T15:26:43</date>
-  <millis>1543501603013</millis>
-  <sequence>1</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Creada base de datos</message>
-</record>
-<record>
-  <date>2018-11-29T15:26:43</date>
-  <millis>1543501603015</millis>
-  <sequence>2</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>BD	select * from usuario where nombre='Dani'</message>
-</record>
-<record>
-  <date>2018-11-29T15:26:43</date>
-  <millis>1543501603275</millis>
+  <date>2018-12-23T17:04:16</date>
+  <millis>1545581056339</millis>
   <sequence>3</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
   <thread>14</thread>
-  <message>BD fila añadida 1 fila	insert into usuario values('Dani', 'null', 'asd')</message>
-</record>
-<?xml version="1.0" encoding="windows-1252" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-<record>
-  <date>2018-11-29T15:27:38</date>
-  <millis>1543501658985</millis>
-  <sequence>0</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Conectada base de datos UsuariosBD</message>
-</record>
-<record>
-  <date>2018-11-29T15:27:38</date>
-  <millis>1543501658990</millis>
-  <sequence>1</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
   <message>Creada base de datos</message>
 </record>
 <record>
-  <date>2018-11-29T15:27:38</date>
-  <millis>1543501658992</millis>
-  <sequence>2</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>BD	select * from usuario where nombre='asd'</message>
-</record>
-</log>
-<?xml version="1.0" encoding="windows-1252" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-<record>
-  <date>2018-11-29T15:28:28</date>
-  <millis>1543501708183</millis>
-  <sequence>0</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Conectada base de datos UsuariosBD</message>
-</record>
-<record>
-  <date>2018-11-29T15:28:28</date>
-  <millis>1543501708189</millis>
-  <sequence>1</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Creada base de datos</message>
-</record>
-<record>
-  <date>2018-11-29T15:28:28</date>
-  <millis>1543501708191</millis>
-  <sequence>2</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>BD	select * from usuario where nombre='asd'</message>
-</record>
-<record>
-  <date>2018-11-29T15:28:28</date>
-  <millis>1543501708495</millis>
-  <sequence>3</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>BD fila añadida 1 fila	insert into usuario values('asd', 'asd', 'asd')</message>
-</record>
-</log>
-<?xml version="1.0" encoding="windows-1252" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-<record>
-  <date>2018-12-06T10:59:02</date>
-  <millis>1544090342602</millis>
-  <sequence>0</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Conectada base de datos UsuariosBD</message>
-</record>
-<record>
-  <date>2018-12-06T10:59:02</date>
-  <millis>1544090342637</millis>
-  <sequence>1</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Creada base de datos</message>
-</record>
-<record>
-  <date>2018-12-06T10:59:02</date>
-  <millis>1544090342640</millis>
-  <sequence>2</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>BD	select * from usuario where nombre=''</message>
-</record>
-<record>
-  <date>2018-12-06T10:59:03</date>
-  <millis>1544090343550</millis>
-  <sequence>3</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
-  <message>Conectada base de datos UsuariosBD</message>
-</record>
-<record>
-  <date>2018-12-06T10:59:03</date>
-  <millis>1544090343552</millis>
+  <date>2018-12-23T17:04:16</date>
+  <millis>1545581056339</millis>
   <sequence>4</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
   <thread>14</thread>
-  <message>Creada base de datos</message>
+  <message>BD	select * from cancion where titulo='ss'</message>
 </record>
 <record>
-  <date>2018-12-06T10:59:03</date>
-  <millis>1544090343553</millis>
+  <date>2018-12-23T17:04:16</date>
+  <millis>1545581056448</millis>
   <sequence>5</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
   <thread>14</thread>
-  <message>BD	select * from usuario where nombre=''</message>
+  <message>BD fila añadida 1 fila	insert into cancion values('ss', 'ss', 'ss', '', 'src/Media/TheRinger.mp3')</message>
 </record>
 <record>
-  <date>2018-12-06T10:59:03</date>
-  <millis>1544090343940</millis>
+  <date>2018-12-23T17:04:16</date>
+  <millis>1545581056480</millis>
   <sequence>6</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
   <thread>14</thread>
-  <message>Conectada base de datos UsuariosBD</message>
+  <message>Cierre de base de datos</message>
 </record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
 <record>
-  <date>2018-12-06T10:59:03</date>
-  <millis>1544090343942</millis>
-  <sequence>7</sequence>
+  <date>2018-12-23T17:18:13</date>
+  <millis>1545581893602</millis>
+  <sequence>0</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
-  <thread>14</thread>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2018-12-23T17:18:13</date>
+  <millis>1545581893618</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
   <message>Creada base de datos</message>
 </record>
 <record>
-  <date>2018-12-06T10:59:03</date>
-  <millis>1544090343942</millis>
-  <sequence>8</sequence>
+  <date>2018-12-23T17:18:13</date>
+  <millis>1545581893634</millis>
+  <sequence>2</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
-  <thread>14</thread>
-  <message>BD	select * from usuario where nombre=''</message>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-12-23T17:24:06</date>
+  <millis>1545582246042</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
 </record>
 <record>
-  <date>2018-12-06T10:59:04</date>
-  <millis>1544090344090</millis>
-  <sequence>9</sequence>
+  <date>2018-12-23T17:24:06</date>
+  <millis>1545582246042</millis>
+  <sequence>1</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
-  <thread>14</thread>
-  <message>Conectada base de datos UsuariosBD</message>
-</record>
-<record>
-  <date>2018-12-06T10:59:04</date>
-  <millis>1544090344092</millis>
-  <sequence>10</sequence>
-  <logger>BD</logger>
-  <level>INFO</level>
-  <class>BD</class>
-  <method>log</method>
-  <thread>14</thread>
+  <thread>1</thread>
   <message>Creada base de datos</message>
 </record>
 <record>
-  <date>2018-12-06T10:59:04</date>
-  <millis>1544090344093</millis>
-  <sequence>11</sequence>
+  <date>2018-12-23T17:24:06</date>
+  <millis>1545582246042</millis>
+  <sequence>2</sequence>
   <logger>BD</logger>
   <level>INFO</level>
   <class>BD</class>
   <method>log</method>
-  <thread>14</thread>
-  <message>BD	select * from usuario where nombre=''</message>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-12-23T17:29:42</date>
+  <millis>1545582582826</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2018-12-23T17:29:42</date>
+  <millis>1545582582826</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-23T17:29:42</date>
+  <millis>1545582582857</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-12-23T17:30:46</date>
+  <millis>1545582646106</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2018-12-23T17:30:46</date>
+  <millis>1545582646106</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-23T17:30:46</date>
+  <millis>1545582646153</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-12-23T17:31:28</date>
+  <millis>1545582688399</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2018-12-23T17:31:28</date>
+  <millis>1545582688404</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-23T17:31:28</date>
+  <millis>1545582688425</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-12-23T17:31:53</date>
+  <millis>1545582713076</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2018-12-23T17:31:53</date>
+  <millis>1545582713076</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-23T17:31:53</date>
+  <millis>1545582713107</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-12-23T17:33:37</date>
+  <millis>1545582817077</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2018-12-23T17:33:37</date>
+  <millis>1545582817077</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-23T17:33:37</date>
+  <millis>1545582817092</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-12-23T17:38:58</date>
+  <millis>1545583138198</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2018-12-23T17:38:58</date>
+  <millis>1545583138213</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2018-12-23T17:38:58</date>
+  <millis>1545583138213</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2018-12-23T17:39:00</date>
+  <millis>1545583140850</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
 </record>
 </log>

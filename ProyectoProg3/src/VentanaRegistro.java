@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -132,7 +133,7 @@ public class VentanaRegistro extends JFrame {
 
 				Usuario usuarioExistente = BD.usuarioSelect(statement, usuario);
 				if(usuarioExistente != null) {
-					System.err.println("Ya existe un usuario con el mismo nombre o correo.");
+					JOptionPane.showMessageDialog(null, "Ya existe un usuario con el mismo nombre.");
 				}else{
 					BD.usuarioInsert(statement, usuario);
 					vp.setVisible(true);

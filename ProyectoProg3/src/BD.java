@@ -197,7 +197,6 @@ public class BD {
 		String sentSQL = "";
 		Cancion song = null;
 		try {
-			
 			sentSQL = "select * from cancion where titulo='" + cancion.getTitulo() + "'";
 			ResultSet rs = st.executeQuery( sentSQL );
 			if (rs.next()) {
@@ -210,7 +209,7 @@ public class BD {
 			lastError = e;
 			e.printStackTrace();
 		}
-		return cancion;
+		return song;
 	}
 
 	/** Modifica una anal�tica en la tabla abierta de BD, usando la sentencia UPDATE de SQL

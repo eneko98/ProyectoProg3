@@ -14,6 +14,8 @@ import java.awt.Panel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.Statement;
 import java.awt.Label;
 
 
@@ -22,9 +24,19 @@ public class VentanaInicio extends JFrame {
 
 	String titulo = "Ventana Principal";
 	Dimension dimension = new Dimension(900, 900);
+	
+	DefaultListModel modeloLista1;
+	
+	//Inicio de la BD de Canciones para mostrarlas en la ventana
+	Connection connection = BD.initBD("CancionesBD");
+	Statement statement = BD.usarCrearTablasBD(connection);
+	
+	
 
 	
 	public VentanaInicio(){
+			
+		
 		setTitle(titulo);
 		setResizable(false);
 		setSize(dimension.width, dimension.height);
@@ -77,22 +89,36 @@ public class VentanaInicio extends JFrame {
 		JTabbedPane pestanyasCanciones = new JTabbedPane(JTabbedPane.TOP);
 		pestanyasCanciones.setBounds(0, 0, 455, 491);
 		pestanyasCanciones.add("Canciones A-Z", cancionesAlfabetico);
-		cancionesAlfabetico.setLayout(null);
+		//Cancion de ejemplo.
+		//************************************ PROVISIONAL ****************************************
+		//Necesitamos un bucle para que meta en la lista todas las canciones que hay en la BD. Esta cancion es solo para probar
+		Cancion cancion = new Cancion("ss");
+		Cancion song = BD.cancionSelect(statement, cancion);
 		
-		JList listaCancionesAlfabetico = new JList();
-		listaCancionesAlfabetico.setBounds(0, 453, 450, -452);
+		modeloLista1 = new DefaultListModel();
+		modeloLista1.addElement(song.getTitulo());
+		cancionesAlfabetico.setLayout(new BorderLayout(0, 0));
+		
+		JList<String> listaCancionesAlfabetico = new JList<String>();
+		listaCancionesAlfabetico.setBackground(Color.WHITE);
+		listaCancionesAlfabetico.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		listaCancionesAlfabetico.setModel(modeloLista1);
 		cancionesAlfabetico.add(listaCancionesAlfabetico);
-		pestanyasCanciones.add("Canciones favoritas", cancionesFavoritas);
-		cancionesFavoritas.setLayout(null);
 		
-		JList listaCancionesFavoritas = new JList();
-		listaCancionesFavoritas.setBounds(441, 0, -440, 461);
+		
+		
+		
+		pestanyasCanciones.add("Canciones favoritas", cancionesFavoritas);
+		cancionesFavoritas.setLayout(new BorderLayout(0, 0));
+		
+		JList<String> listaCancionesFavoritas = new JList<String>();
+		listaCancionesFavoritas.setBackground(Color.WHITE);
 		cancionesFavoritas.add(listaCancionesFavoritas);
 		pestanyasCanciones.add("Canciones Recientes", cancionesRecientes);
-		cancionesRecientes.setLayout(null);
+		cancionesRecientes.setLayout(new BorderLayout(0, 0));
 		
-		JList listaCancionesRecientes = new JList();
-		listaCancionesRecientes.setBounds(0, 448, 450, -447);
+		JList<String> listaCancionesRecientes = new JList<String>();
+		listaCancionesRecientes.setBackground(Color.WHITE);
 		cancionesRecientes.add(listaCancionesRecientes);
 		panelCanciones.add(pestanyasCanciones);
 		
@@ -125,15 +151,23 @@ public class VentanaInicio extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				boolean f = new uk.co.caprica.vlcj.discovery.NativeDiscovery().discover();
 				System.out.println(f);
-				VentanaReproductor vR = new VentanaReproductor("src/Media/EminemTheRinger.wav");
+				//Elegimos la cancion seleccionada en la lista
+				int elegido = listaCancionesAlfabetico.getSelectedIndex();
+				String nombreCancion = listaCancionesAlfabetico.getModel().getElementAt(elegido);
+				Cancion cancion = new Cancion(nombreCancion);
+				Cancion song = BD.cancionSelect(statement, cancion);
+				//Y abrimos el reproductor.
+				VentanaReproductor vR = new VentanaReproductor(song.getUrl());
 				vR.setVisible(true);
 				
 			}
 		});
+		
+		//Se abre DatosCancion
 		botonSubir.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				DatosCancion dC = new DatosCancion();
@@ -141,8 +175,9 @@ public class VentanaInicio extends JFrame {
 				
 			}
 		});
-		botonRegistrarse.addActionListener(new ActionListener() {
-			
+		
+		//Se abre VentanaRegistro
+		botonRegistrarse.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -152,14 +187,12 @@ public class VentanaInicio extends JFrame {
 			}
 		});
 		
-
-		botonEntrar.addActionListener(new ActionListener() {
-			
+		//Se abre VentanaLoggin
+		botonEntrar.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				VentanaLoggin vl = new VentanaLoggin();
 				vl.setVisible(true);
-				
 			}
 		});
 		
@@ -168,7 +201,8 @@ public class VentanaInicio extends JFrame {
 		
 	public static void main(String[] args) {
 		VentanaInicio v = new VentanaInicio();
-		v.setVisible(true);
+		v.setVisible(true);		
 	}
+	
 }
 

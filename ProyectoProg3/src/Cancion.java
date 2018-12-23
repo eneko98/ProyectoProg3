@@ -18,6 +18,10 @@ public class Cancion {
 		this.url = url;
 	}
 	
+	public Cancion(String titulo) {
+		this.titulo = titulo;
+	}
+	
 	public Cancion() {
 		this.titulo = "";
 		this.autor = "";
