@@ -383,3 +383,1169 @@
   <message>BD	select * from cancion where titulo='ss'</message>
 </record>
 </log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:13:04</date>
+  <millis>1547910784192</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:13:04</date>
+  <millis>1547910784201</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:13:04</date>
+  <millis>1547910784237</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2019-01-19T16:13:15</date>
+  <millis>1547910795603</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:30:12</date>
+  <millis>1547911812629</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:30:12</date>
+  <millis>1547911812641</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:37:10</date>
+  <millis>1547912230530</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:37:10</date>
+  <millis>1547912230541</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:45:12</date>
+  <millis>1547912712977</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:45:12</date>
+  <millis>1547912712992</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:45:13</date>
+  <millis>1547912713013</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='null'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:52:43</date>
+  <millis>1547913163930</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:52:43</date>
+  <millis>1547913163943</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:53:04</date>
+  <millis>1547913184508</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:53:04</date>
+  <millis>1547913184520</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:53:04</date>
+  <millis>1547913184546</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2019-01-19T16:54:36</date>
+  <millis>1547913276150</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos FicherosBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:54:36</date>
+  <millis>1547913276152</millis>
+  <sequence>4</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:54:39</date>
+  <millis>1547913279924</millis>
+  <sequence>5</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:54:39</date>
+  <millis>1547913279927</millis>
+  <sequence>6</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:54:39</date>
+  <millis>1547913279928</millis>
+  <sequence>7</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>BD	select * from cancion where titulo='Pyaar'</message>
+</record>
+<record>
+  <date>2019-01-19T16:54:40</date>
+  <millis>1547913280130</millis>
+  <sequence>8</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>BD fila añadida 1 fila	insert into cancion values('Pyaar', 'Kahani', '19/01/2019', '', 'src/Media/PyaarKiEkKahani-KrrishBlu-RaySong1080p[HD].mp4-YouTube.mp4(320kbps)(MP3Park.com).mp3')</message>
+</record>
+<record>
+  <date>2019-01-19T16:54:40</date>
+  <millis>1547913280141</millis>
+  <sequence>9</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:55:01</date>
+  <millis>1547913301903</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:55:01</date>
+  <millis>1547913301910</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:55:01</date>
+  <millis>1547913301934</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:56:01</date>
+  <millis>1547913361177</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:01</date>
+  <millis>1547913361187</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:01</date>
+  <millis>1547913361210</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:48</date>
+  <millis>1547913408223</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos FicherosBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:48</date>
+  <millis>1547913408226</millis>
+  <sequence>4</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:49</date>
+  <millis>1547913409452</millis>
+  <sequence>5</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:49</date>
+  <millis>1547913409454</millis>
+  <sequence>6</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:49</date>
+  <millis>1547913409456</millis>
+  <sequence>7</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>BD	select * from cancion where titulo='KhaZix'</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:49</date>
+  <millis>1547913409457</millis>
+  <sequence>8</sequence>
+  <logger>BD</logger>
+  <level>SEVERE</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Error en BD	insert into cancion values('KhaZix', 'Kha'Zix', '19/01/2019', '', 'src/Media/Kha'Zix.mp4(320kbps)(MP3Park.com).mp3')</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "Zix": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>909</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>921</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>886</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>87</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>BD</class>
+      <method>cancionInsert</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>DatosCancion$1</class>
+      <method>actionPerformed</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>2022</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2348</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>402</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>259</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>252</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6539</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6304</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2239</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>4889</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2297</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4711</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4904</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4535</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4476</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2283</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2746</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4711</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>760</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+      <line>709</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+      <line>703</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>74</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>84</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>733</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>731</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>74</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>730</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>205</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>105</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>93</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>82</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-19T16:56:49</date>
+  <millis>1547913409478</millis>
+  <sequence>9</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:56:59</date>
+  <millis>1547913419646</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:59</date>
+  <millis>1547913419655</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:56:59</date>
+  <millis>1547913419679</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T16:58:13</date>
+  <millis>1547913493599</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T16:58:13</date>
+  <millis>1547913493607</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T16:58:13</date>
+  <millis>1547913493633</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:05:44</date>
+  <millis>1547913944900</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:05:44</date>
+  <millis>1547913944906</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:05:44</date>
+  <millis>1547913944933</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2019-01-19T17:05:44</date>
+  <millis>1547913944980</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:10:05</date>
+  <millis>1547914205277</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:05</date>
+  <millis>1547914205290</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:05</date>
+  <millis>1547914205312</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:05</date>
+  <millis>1547914205361</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:32</date>
+  <millis>1547914232896</millis>
+  <sequence>4</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos FicherosBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:32</date>
+  <millis>1547914232898</millis>
+  <sequence>5</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:37</date>
+  <millis>1547914237292</millis>
+  <sequence>6</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:37</date>
+  <millis>1547914237293</millis>
+  <sequence>7</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:37</date>
+  <millis>1547914237294</millis>
+  <sequence>8</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>BD	select * from cancion where titulo='asdfasd'</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:37</date>
+  <millis>1547914237547</millis>
+  <sequence>9</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>BD fila añadida 1 fila	insert into cancion values('asdfasd', 'asdfasdf', 'asdfasdf', '', 'src/Media/FortniteSupportaCreator.MP4(320kbps)(MyConverterSite.com).mp3')</message>
+</record>
+<record>
+  <date>2019-01-19T17:10:37</date>
+  <millis>1547914237554</millis>
+  <sequence>10</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:11:53</date>
+  <millis>1547914313540</millis>
+  <sequence>11</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos FicherosBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:11:53</date>
+  <millis>1547914313542</millis>
+  <sequence>12</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:11:55</date>
+  <millis>1547914315557</millis>
+  <sequence>13</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:11:55</date>
+  <millis>1547914315558</millis>
+  <sequence>14</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:11:55</date>
+  <millis>1547914315559</millis>
+  <sequence>15</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>BD	select * from cancion where titulo='asdfasd'</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:16:09</date>
+  <millis>1547914569131</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:16:09</date>
+  <millis>1547914569138</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:16:09</date>
+  <millis>1547914569165</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2019-01-19T17:16:09</date>
+  <millis>1547914569209</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:21:39</date>
+  <millis>1547914899746</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:21:39</date>
+  <millis>1547914899755</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:21:39</date>
+  <millis>1547914899782</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='3'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:23:37</date>
+  <millis>1547915017242</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:23:37</date>
+  <millis>1547915017251</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:23:37</date>
+  <millis>1547915017277</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='3'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:28:20</date>
+  <millis>1547915300275</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:28:20</date>
+  <millis>1547915300283</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:28:20</date>
+  <millis>1547915300309</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2019-01-19T17:28:20</date>
+  <millis>1547915300350</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:29:08</date>
+  <millis>1547915348028</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-19T17:29:08</date>
+  <millis>1547915348037</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-19T17:29:08</date>
+  <millis>1547915348063</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2019-01-19T17:29:08</date>
+  <millis>1547915348106</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>

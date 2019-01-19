@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.FlowLayout;
 import javax.swing.border.LineBorder;
 
+import com.mysql.cj.protocol.Resultset;
 
 import java.awt.Font;
 import java.awt.Panel;
@@ -15,6 +16,8 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.Label;
 
@@ -25,11 +28,15 @@ public class VentanaInicio extends JFrame {
 	String titulo = "Ventana Principal";
 	Dimension dimension = new Dimension(900, 900);
 	
-	DefaultListModel modeloLista1;
+	DefaultListModel<String> modeloLista1;
 	
 	//Inicio de la BD de Canciones para mostrarlas en la ventana
 	Connection connection = BD.initBD("CancionesBD");
 	Statement statement = BD.usarCrearTablasBD(connection);
+	
+	ResultSet resultSet = null;
+	Cancion cancion;
+	Cancion song;
 	
 	
 
@@ -92,11 +99,26 @@ public class VentanaInicio extends JFrame {
 		//Cancion de ejemplo.
 		//************************************ PROVISIONAL ****************************************
 		//Necesitamos un bucle para que meta en la lista todas las canciones que hay en la BD. Esta cancion es solo para probar
-		Cancion cancion = new Cancion("ss");
-		Cancion song = BD.cancionSelect(statement, cancion);
+		//Creamos un while() con resulSet de para que saque todos las lineas de la BD.
 		
-		modeloLista1 = new DefaultListModel();
-		modeloLista1.addElement(song.getTitulo());
+		modeloLista1 = new DefaultListModel<String>();
+		try {
+			resultSet = statement.executeQuery("select * from cancion");
+			while(resultSet.next()) {
+				cancion = new Cancion(resultSet.getString(1));
+				song = BD.cancionSelect(statement, cancion);
+				modeloLista1.addElement(song.getTitulo());
+				repaint();
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		
+		
+		
 		cancionesAlfabetico.setLayout(new BorderLayout(0, 0));
 		
 		JList<String> listaCancionesAlfabetico = new JList<String>();
@@ -195,7 +217,7 @@ public class VentanaInicio extends JFrame {
 				vl.setVisible(true);
 			}
 		});
-		
+		BD.cerrarBD(connection, statement);
 	}
 		
 		
