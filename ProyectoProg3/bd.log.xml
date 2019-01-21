@@ -1549,3 +1549,123 @@
   <message>Cierre de base de datos</message>
 </record>
 </log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:42:02</date>
+  <millis>1548088922574</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-21T17:42:02</date>
+  <millis>1548088922607</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T17:42:02</date>
+  <millis>1548088922692</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<record>
+  <date>2019-01-21T17:42:07</date>
+  <millis>1548088927293</millis>
+  <sequence>3</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:45:34</date>
+  <millis>1548089134365</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-21T17:45:34</date>
+  <millis>1548089134378</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T17:45:34</date>
+  <millis>1548089134457</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:49:47</date>
+  <millis>1548089387081</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conectada base de datos CancionesBD</message>
+</record>
+<record>
+  <date>2019-01-21T17:49:47</date>
+  <millis>1548089387096</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T17:49:47</date>
+  <millis>1548089387122</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from cancion where titulo='ss'</message>
+</record>

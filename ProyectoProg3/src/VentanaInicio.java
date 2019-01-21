@@ -217,7 +217,7 @@ public class VentanaInicio extends JFrame {
 				vl.setVisible(true);
 			}
 		});
-		BD.cerrarBD(connection, statement);
+		
 	}
 		
 		
